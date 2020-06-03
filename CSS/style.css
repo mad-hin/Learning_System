@@ -1,0 +1,95 @@
+body.login-body{
+    margin: 0;
+    height:100%;
+    background: url(../img/book.jpg);
+    background-size: cover;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 400px;
+    padding: 40px;
+    background-color: rgb(37, 46, 46);
+    text-align: center;
+}
+
+.login-box h1{
+    color:white;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.login-box input[type = "text"], .login-box input[type = "password"]{
+    border : 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #00ffff;
+    padding: 14px 10px;
+    width : 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: medium;
+}
+
+.login-box input[type = "text"]:focus, .login-box input[type = "password"]:focus{
+    width: 380px;
+    border-color: chartreuse;
+}
+
+.login-box button[type = "button"]{
+    border : 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid chartreuse;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.login-box button[type = "button"]:hover{
+    background: #2ecc71;
+}
+
+#fgtpwd{
+    color: white;
+    text-decoration: none !important;
+}
+
+.login-box p {
+   width: 100%; 
+   text-align: center; 
+   margin: 10px 0 20px; 
+   color: red;
+   visibility: hidden;
+} 
+
+.login-box hr{
+    border-color: red;
+    visibility: hidden;
+}
+
+.firebaseui-tos ,.firebaseui-tospp-full-message{
+    text-align: center;
+    line-height: normal;
+    margin: auto;
+}
+
+body.system-body{
+    height:100%;
+    /*
+    background: url(../img/systemBgd.jpg);
+    background-size: cover;
+    */
+}
