@@ -20,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mad-hin/Learn_System.git"
+    "url": "git+https://github.com/mad-hin/Learning_System.git"
   },
   "bugs": {
-    "url": "https://github.com/mad-hin/Learn_System/issues"
+    "url": "https://github.com/mad-hin/Learning_System/issues"
   },
-  "homepage": "https://github.com/mad-hin/Learn_System#readme",
+  "homepage": "https://github.com/mad-hin/Learning_System#readme",
   "description": ""
 }
