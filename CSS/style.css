@@ -93,3 +93,12 @@ body.system-body{
     background-size: cover;
     */
 }
+
+.sidebar{
+    height: 100%;
+    width: 85px;
+    position: fixed;
+    background-color: #00ffff;
+    top: 0;
+    left: 0;
+}
