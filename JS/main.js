@@ -10,11 +10,16 @@ function createWindow() {
             fullscreen: true
         },
         darkTheme: false,
-        resizable: false
     })
-    //Disable default menubar
+    // Disable default menubar
     win.removeMenu(null);//For Windows and Linux only
+
+    // Broweser Window to be maximize (a.k.a "Fullscreen")
     win.maximize();
+
+    //Set Broweser Window be not resizable
+    win.setResizable(false);
+    
     //Customize Menubar
     /*var menu = Menu.buildFromTemplate([
         

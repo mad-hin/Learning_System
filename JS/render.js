@@ -17,7 +17,7 @@ var db = firebase.database();
 
 // Get Current HTML Page Name
 var fileName = location.pathname.split("/").slice(-1);
-console.log(fileName[0] === "index.html");
+console.log(fileName[0]);
 
 // Check if this page is the login in page
 if (fileName[0] === "index.html") {
@@ -27,8 +27,8 @@ if (fileName[0] === "index.html") {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            //Show the Previous Sign in Account email
-            document.getElementById("email").value = user.email; 
+            // Show the Previous Sign in Account email
+            document.getElementById("email").value = user.email;
         }
     });
 

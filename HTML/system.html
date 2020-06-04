@@ -11,19 +11,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../JS/system.js"></script>
 </head>
 
 <body class="system-body">
-    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-        <a href="#"><span><i class="material-icons">home</i><span class="icon-text">Home</span></a><br>
-        <a href="#"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></a><br>
-        <a href="#"><span><i class="material-icons">menu_book</i><span class="icon-text">Practise</span></a><br>
+    <div id="mySidebar" class="sidebar" onmouseover="collaspeSidebar()" onmouseout="collaspeSidebar()">
+        <a href="#" id = "home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></span></a><br>
+        <a href="#" id = "task"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></span></a><br>
+        <a href="#" id = "practise"><span><i class="material-icons">menu_book</i><span class="icon-text">Practise</span></span></a><br>
+        <a href="#" id = "systemLogout"><span><i class="material-icons">exit_to_app</i><span class="icon-text">Logout</span></span></a><br>
+        <a href="#" id = "setting"><span><i class="material-icons">settings</i><span class="icon-text">Settings</span></span></a><br>
     </div>
-    
+
     <div id="main">
         <p>you have login</p>
     </div>
-    <script>require('../JS/renerder.js')</script>
+    <script>require('../JS/render.js')</script>
 </body>
 
 </html>
