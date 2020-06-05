@@ -108,7 +108,7 @@ body.system-body {
 	z-index: 1;
 	transition: 0.5s;
 	overflow-x: hidden;
-	padding-top: 25px;
+	padding-top: 45px;
 	white-space: nowrap;
 }
 

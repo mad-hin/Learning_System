@@ -10,6 +10,7 @@ function createWindow() {
             fullscreen: true
         },
         darkTheme: false,
+        frame: false,
     })
     // Disable default menubar
     win.removeMenu(null);//For Windows and Linux only
@@ -21,10 +22,12 @@ function createWindow() {
     win.setResizable(false);
     
     //Customize Menubar
-    /*var menu = Menu.buildFromTemplate([
-        
+    var menu = Menu.buildFromTemplate([
+        // Empty Menu
     ])
-    Menu.setApplicationMenu(menu); */
+
+    // Set The Menu To Customize Menubar (Expected: Nothing)
+    Menu.setApplicationMenu(menu); 
 
     // and load the index.html of the app.
     win.loadFile('./HTML/index.html')
@@ -32,6 +35,7 @@ function createWindow() {
     // Open the DevTools.
     win.webContents.openDevTools()
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

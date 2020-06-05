@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "connect": "^3.7.0",
+    "custom-electron-titlebar": "^3.2.2-hotfix62",
     "firebase": "^7.14.5",
     "node-static": "^0.7.11",
     "serve-static": "^1.14.1"

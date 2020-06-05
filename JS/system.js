@@ -10,3 +10,13 @@ function collaspeSidebar() {
         this.extented = false;
     }
 }
+
+window.onload = function () {
+    var bntHome = document.getElementById("home");
+    // Action after clicking the "Home" anchor
+    bntHome.onclick = function () {
+        // Direct to "system.html"
+        document.location.href = 'system.html';
+    }
+// End of Action after clicking the "Home" anchor
+}

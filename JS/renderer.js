@@ -9,8 +9,22 @@ var firebaseConfig = {
     appId: "1:9597659671:web:6483168c4d16fcad9e4a52",
     measurementId: "G-9724QZ8R0E"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Import Package "custom-electron-titlebar" To Create Customize Title Bar
+const customTitlebar = require('custom-electron-titlebar');
+
+//Initilize Customize Title Bar
+let titleBar = new customTitlebar.Titlebar({
+    backgroundColor: customTitlebar.Color.fromHex('#f1f1f1'),
+    shadow: true,
+    maximizable: false,
+});
+
+// Add Customize Title Bar To The Frame (Expected : No Title)
+titleBar.updateTitle('');
 
 // Initialize Firebase Database
 var db = firebase.database();
@@ -41,10 +55,19 @@ if (fileName[0] === "index.html") {
             document.location.href = 'system.html';
         }).catch(function (error) {
             if (error != null) {
+                // Get Error Code
                 var errorCode = error.code;
+
+                // Get Error Message
                 var errorMessage = error.message;
+
+                // Make The Horizontal Rule Be Visible
                 document.getElementById("login-hr").style.visibility = "visible";
+
+                // Load Error Message 
                 document.getElementById("login-error").innerHTML = errorMessage;
+
+                // Make The Error Message Be Visible
                 document.getElementById("login-error").style.visibility = "visible";
                 return;
             }
@@ -55,15 +78,26 @@ if (fileName[0] === "index.html") {
     //Forgot Password
     forgotPwd.addEventListener('click', function () {
         var email = document.getElementById("email").value;
+
+        //Check if the email field is empty
         if (email !== '') {
             firebase.auth().sendPasswordResetEmail(email).then(function () {
                 window.alert("Email has been sent to you.")
             }).catch(function (error) {
                 if (error != null) {
+                    // Get Error Code
                     var errorCode = error.code;
+
+                    // Get Error Message
                     var errorMessage = error.message;
+
+                    // Make The Horizontal Rule Be Visible
                     document.getElementById("login-hr").style.visibility = "visible";
-                    document.getElementById("login-error").iinnerHTML = errorMessage;
+
+                    // Load Error Message 
+                    document.getElementById("login-error").innerHTML = errorMessage;
+
+                    // Make The Error Message Be Visible
                     document.getElementById("login-error").style.visibility = "visible";
                     return;
                 }
@@ -73,11 +107,17 @@ if (fileName[0] === "index.html") {
     //End of Forgot Password
 } else if (fileName[0] === "system.html") {
     var btnLogOut = document.getElementById("systemLogout");
+
+    // Action after clicking the "Logout" anchor
     btnLogOut.onclick = function () {
+        // Sign out
         firebase.auth().signOut().then(
             function () {
+                // Direct back to Login page "index.html"
                 document.location.href = 'index.html';
             }
         )
+        // End of Sing out
     }
+    // End of Action after clicking the "Logout" anchor
 }
