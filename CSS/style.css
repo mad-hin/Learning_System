@@ -149,6 +149,7 @@ main .sidebar {
 	margin-left: 60px;
 	transition: margin-left 0.5s;
 }
+
 #home,#task,#practice,#logout,#setting{
     visibility: visible;
 }

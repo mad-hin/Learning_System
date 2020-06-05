@@ -71,4 +71,13 @@ if (fileName[0] === "index.html") {
         }
     })
     //End of Forgot Password
+} else if (fileName[0] === "system.html") {
+    var btnLogOut = document.getElementById("systemLogout");
+    btnLogOut.onclick = function () {
+        firebase.auth().signOut().then(
+            function () {
+                document.location.href = 'index.html';
+            }
+        )
+    }
 }
