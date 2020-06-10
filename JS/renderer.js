@@ -120,4 +120,18 @@ if (fileName[0] === "index.html") {
         // End of Sing out
     }
     // End of Action after clicking the "Logout" anchor
+    firebase.auth().onAuthStateChanged(function (user) {
+        if(user){
+            var userId = user.uid;
+            getUserName(userId);
+        }
+    });
+}
+
+function getUserName(userId){
+    db.ref('/users/'+userId+'/name').once('value').then(
+        name=>{
+                document.getElementById('welcomeMessage').innerHTML = "Welcome " + name.val();
+        }
+    )
 }
