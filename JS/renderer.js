@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyCWdkpNfAFHAshIleSAHx_v9sqqX4lCjdI",
+    apiKey: "AIzaSyDcsuMIqgVjw7k_BF-Vq49qZj6rOU2wJZc",
     authDomain: "learning-system-01.firebaseapp.com",
     databaseURL: "https://learning-system-01.firebaseio.com",
     projectId: "learning-system-01",
