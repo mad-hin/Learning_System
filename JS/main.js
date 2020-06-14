@@ -10,7 +10,7 @@ function createWindow() {
             fullscreen: true
         },
         darkTheme: false,
-        frame: false,
+        //frame: false,
     })
     // Disable default menubar
     win.removeMenu(null);//For Windows and Linux only

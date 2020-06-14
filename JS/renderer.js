@@ -14,7 +14,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Import Package "custom-electron-titlebar" To Create Customize Title Bar
-const customTitlebar = require('custom-electron-titlebar');
+/*const customTitlebar = require('custom-electron-titlebar');
 
 //Initilize Customize Title Bar
 let titleBar = new customTitlebar.Titlebar({
@@ -24,7 +24,7 @@ let titleBar = new customTitlebar.Titlebar({
 });
 
 // Add Customize Title Bar To The Frame (Expected : No Title)
-titleBar.updateTitle('');
+titleBar.updateTitle('');*/
 
 // Initialize Firebase Database
 var db = firebase.database();
@@ -124,14 +124,31 @@ if (fileName[0] === "index.html") {
         if(user){
             var userId = user.uid;
             getUserName(userId);
+            checkRole(userId);
         }
     });
 }
 
 function getUserName(userId){
     db.ref('/users/'+userId+'/name').once('value').then(
-        name=>{
-                document.getElementById('welcomeMessage').innerHTML = "Welcome " + name.val();
+        name => {
+            console.log(name.val());
+            document.getElementById('welcomeMessage').style.visibility = "hidden";
+            document.getElementById('welcomeMessage').innerHTML = "Welcome " + name.val();
+            document.getElementById('welcomeMessage').style.visibility = "visible";
+        }
+    )
+}
+
+function checkRole(userId) {
+    db.ref('/users/' + userId + '/role').once('value').then(
+        role => {
+            if (role.val() !== "teacher") {
+                var teacherView = document.getElementsByClassName('teacherView');
+                for (var i = 0; i < teacherView.length; i++) {
+                    teacherView[i].style.display = 'none';
+                }
+            }
         }
     )
 }
