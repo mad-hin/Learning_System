@@ -160,6 +160,7 @@ main .sidebar {
 }
 
 #welcomeMessage{
+	visibility: hidden;
 	text-align: center;
 	font-size: x-large;
 }
@@ -184,4 +185,84 @@ body.newstuacc-body {
     background-size: 115%;
 	color: #f1f1f1;
 	font-family: 'Times New Roman', Times, serif;
+}
+
+
+.signUp-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 800px;
+	padding: 25px;
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+}
+
+.signUp-box h3 {
+	color: white;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.signUp-box input[type="text"],
+.signUp-box input[type="password"] {
+	border: none;
+	background-color: transparent;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #ffffff;
+	padding: 14px 10px;
+	width: 400px;
+	outline: none;
+	color: white;
+	border-radius: 35px;
+	transition: 0.25s;
+	font-size: medium;
+}
+
+.signUp-box input[type="text"]:focus,
+.signUp-box input[type="password"]:focus {
+	width: 480px;
+	border-color: chartreuse;
+}
+
+.signUp-box button[name="signUpBnt"] {
+	border: 0;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid chartreuse;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.signUp-box button[name="redoBnt"] {
+	border: 0;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid red;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.signUp-box  button[name="redoBnt"]:hover{
+	background: rgb(179, 0, 0);
+}
+
+.signUp-box  button[name="signUpBnt"]:hover{
+	background: #2ecc71;
+}
+
+.signUp-box ::placeholder{
+	color: white;
 }

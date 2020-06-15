@@ -56,9 +56,26 @@
     </div>
 
     <div id="main">
-        <h1 style="color: black; text-align: center;">Create New Student Account</h1>
-        <div id="welcome">
-            
+        <div class="signUpForm">
+            <div class="signUpTitle" style="text-align: center; color: black;">
+                <h1>Create New Student Account</h1>
+            </div>
+            <div class="signUp-box">
+                <form>
+                    <h3>Student Name</h3>
+                    <input type="text" name="stuName" id="stuName" placeholder="Input Student Name" required>
+                    <h3>Student ID</h3>
+                    <input type="text" name="stuId" id="stuId" placeholder="Input Student ID" required>
+                    <h3>Email</h3>
+                    <input type="text" name="stuEmail" id="stuEmail" placeholder="Input Email" required>
+                    <h3>Password</h3>
+                    <input type="password" name="stuPwd" id="stuPwd" placeholder="Input Password" required>
+                    <h3>Confirm Password</h3>
+                    <input type="password" name="stuConPwd" id="stuConPwd" placeholder="Confirm Password" required>
+                    <button name="redoBnt" type="button">Reset</button>
+                    <button name="signUpBnt" type="button">Create</button>
+                </form>
+            </div>
         </div>
     </div>
     <script>require('../JS/renderer.js')</script>
