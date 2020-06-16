@@ -60,9 +60,8 @@ function createAcc() {
     var stuEmail = document.getElementById("stuEmail").value;
     var stuPwd = document.getElementById("stuPwd").value;
     var stuComPwd = document.getElementById("stuComPwd").value;
-    console.log(pwdCheck(stuPwd, stuComPwd));
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
-        console.log("All items filled")
+        console.log("All items filled");
         if (allChecked(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
             console.log("All items are valid")
         }
@@ -126,7 +125,7 @@ function unFillMessage(unFillPart) {
 }
 
 function allChecked(name, id, email, pwd, compwd) {
-    if (pwdCheck(pwd, compwd)) {
+    if (pwdCheck(pwd, compwd) && emailCheck(email)) {
 
     }
 }
@@ -150,9 +149,28 @@ function pwdCheck(pwd, compwd) {
 
 function pwdLenCheck(pwd) {
     if (pwd.length < 4) {
-        alert("Password is too short (at least 4 characters). \n");
+        alert("Password is too short (at least 4 characters).\n");
         return false;
     } else {
         return true;
+    }
+}
+
+function emailCheck(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return true;
+    } else {
+        alert("Error, It is an invalid email address.\nPlease fill in a valid email address\n")
+        return false
+    }
+}
+
+function nameCheck(name) {
+    if (/^[a-zA-Z_\u4e00-\u9fa5 ]+$/.test(name)) {
+        console.log("Name ok\n");
+        return true;
+    } else {
+        console.log("Name not ok\n")
+        alert("Error, invalid formate.\nPlease either fill in Chinese Name or English Name\n")
     }
 }
