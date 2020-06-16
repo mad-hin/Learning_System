@@ -62,10 +62,9 @@ function createAcc() {
     var stuComPwd = document.getElementById("stuComPwd").value;
     console.log(pwdCheck(stuPwd, stuComPwd));
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
-        if (pwdCheck(stuPwd, stuComPwd)) {
-            console.log(true);
-        } else {
-            console.log(false);
+        console.log("All items filled")
+        if (allChecked(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
+            console.log("All items are valid")
         }
     }
 }
@@ -74,52 +73,43 @@ function reform() {
     document.getElementById("signUp").reset();
 }
 
-function pwdCheck(pwd, compwd) {
-    if (pwd === compwd) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function allFill(name,id,email,pwd,compwd) {
+function allFill(name, id, email, pwd, compwd) {
     var unFillPart = "";
     var cnt = 0;
     if (name == "" && cnt === 0) {
-        unFillPart += "1. Student Name";
+        unFillPart += "1. Student Name\n";
         cnt++;
     } else if (name == "") {
-        unFillPart += ", " + ++cnt + ". Student Name";
-        
+        unFillPart += ++cnt + ". Student Name\n";
     }
 
     if (id == "" && cnt === 0) {
-        unFillPart += "1. Student ID";
+        unFillPart += "1. Student ID\n";
         cnt++;
     }
     else if (id == "") {
-        unFillPart += ", " + ++cnt + ". Student ID";
+        unFillPart += ++cnt + ". Student ID\n";
     }
 
     if (email == "" && cnt === 0) {
-        unFillPart += "1. Student Email";
+        unFillPart += "1. Student Email\n";
         cnt++;
     } else if (email == "") {
-        unFillPart += ", " + ++cnt + ". Student Email";
+        unFillPart += ++cnt + ". Student Email\n";
     }
 
     if (pwd == "" && cnt === 0) {
-        unFillPart += "1. Password";
+        unFillPart += "1. Password\n";
         cnt++;
     } else if (pwd == "") {
-        unFillPart += ", " + ++cnt + ". Password";
+        unFillPart += ++cnt + ". Password\n";
     }
 
     if (compwd == "" && cnt === 0) {
-        unFillPart += "1. Confirm Password";
+        unFillPart += "1. Confirm Password\n";
         cnt++;
     } else if (compwd == "") {
-        unFillPart += ", " + ++cnt + ". Confirm Password";
+        unFillPart += ++cnt + ". Confirm Password\n";
     }
 
     if (unFillPart !== "") {
@@ -132,5 +122,37 @@ function allFill(name,id,email,pwd,compwd) {
 
 function unFillMessage(unFillPart) {
     console.log(unFillPart);
-    alert("Error, Account cannot be created. The following item(s) have not been filled: " + unFillPart);
+    alert("Error, Account cannot be created.\nThe following item(s) have not been filled:\n" + unFillPart);
+}
+
+function allChecked(name, id, email, pwd, compwd) {
+    if (pwdCheck(pwd, compwd)) {
+
+    }
+}
+
+function pwdCheck(pwd, compwd) {
+    if (pwd !== compwd) {
+        alert("Password and Confirm Password do not match");
+        return false;
+    }
+
+    if (!pwdLenCheck(pwd)) {
+        return false
+    }
+
+    if (!pwdLenCheck(compwd)) {
+        return false;
+    }
+
+    return true;
+}
+
+function pwdLenCheck(pwd) {
+    if (pwd.length < 4) {
+        alert("Password is too short (at least 4 characters). \n");
+        return false;
+    } else {
+        return true;
+    }
 }
