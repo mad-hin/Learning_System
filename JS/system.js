@@ -1,13 +1,19 @@
+// Check the Sidebar extented or not (default: false)
 var extented = false;
+
+// Function to make the sidebar extent (pop out)
 function collaspeSidebar() {
     if (!extented) {
+        // Change the sidebar width and extent to 180px
         document.getElementById("mySidebar").style.width = "180px";
         this.extented = true;
     } else {
+        // Change the sidebar width and close to 50px
         document.getElementById("mySidebar").style.width = "50px";
         this.extented = false;
     }
 }
+// End of Function: collaspeSidebar()
 
 // Get Current HTML Page Name
 var fileName = location.pathname.split("/").slice(-1);
@@ -34,11 +40,6 @@ window.onload = function () {
     if (fileName[0] === "newstuacc.html") {
         var reset = document.getElementById("redoBnt");
         var create = document.getElementById("signUpBnt");
-        var stuName = document.getElementById("stuName").value;
-        var stuId = document.getElementById("stuId").value;
-        var stuEmail = document.getElementById("stuEmail").value;
-        var stuPwd = document.getElementById("stuPwd").value;
-        var stuComPwd = document.getElementById("stuComPwd").value;
 
         reset.addEventListener('click', function () {
             // Confirm to erease all the input
@@ -60,10 +61,12 @@ function createAcc() {
     var stuPwd = document.getElementById("stuPwd").value;
     var stuComPwd = document.getElementById("stuComPwd").value;
     console.log(pwdCheck(stuPwd, stuComPwd));
-    if (pwdCheck(stuPwd, stuComPwd)) {
-        console.log(true);
-    } else {
-        console.log(false);
+    if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
+        if (pwdCheck(stuPwd, stuComPwd)) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
     }
 }
 
@@ -77,4 +80,57 @@ function pwdCheck(pwd, compwd) {
     } else {
         return false;
     }
+}
+
+function allFill(name,id,email,pwd,compwd) {
+    var unFillPart = "";
+    var cnt = 0;
+    if (name == "" && cnt === 0) {
+        unFillPart += "1. Student Name";
+        cnt++;
+    } else if (name == "") {
+        unFillPart += ", " + ++cnt + ". Student Name";
+        
+    }
+
+    if (id == "" && cnt === 0) {
+        unFillPart += "1. Student ID";
+        cnt++;
+    }
+    else if (id == "") {
+        unFillPart += ", " + ++cnt + ". Student ID";
+    }
+
+    if (email == "" && cnt === 0) {
+        unFillPart += "1. Student Email";
+        cnt++;
+    } else if (email == "") {
+        unFillPart += ", " + ++cnt + ". Student Email";
+    }
+
+    if (pwd == "" && cnt === 0) {
+        unFillPart += "1. Password";
+        cnt++;
+    } else if (pwd == "") {
+        unFillPart += ", " + ++cnt + ". Password";
+    }
+
+    if (compwd == "" && cnt === 0) {
+        unFillPart += "1. Confirm Password";
+        cnt++;
+    } else if (compwd == "") {
+        unFillPart += ", " + ++cnt + ". Confirm Password";
+    }
+
+    if (unFillPart !== "") {
+        unFillMessage(unFillPart);
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function unFillMessage(unFillPart) {
+    console.log(unFillPart);
+    alert("Error, Account cannot be created. The following item(s) have not been filled: " + unFillPart);
 }
