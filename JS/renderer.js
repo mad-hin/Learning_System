@@ -106,6 +106,16 @@ if (fileName[0] === "index.html") {
     })
     //End of Forgot Password
 } else if (fileName[0] === "system.html") {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if(user){
+            var userId = user.uid;
+            getUserName(userId);
+            checkRole(userId);
+        }
+    });
+}
+
+if (fileName[0] !== "index.html") {
     var btnLogOut = document.getElementById("systemLogout");
 
     // Action after clicking the "Logout" anchor
@@ -120,13 +130,6 @@ if (fileName[0] === "index.html") {
         // End of Sing out
     }
     // End of Action after clicking the "Logout" anchor
-    firebase.auth().onAuthStateChanged(function (user) {
-        if(user){
-            var userId = user.uid;
-            getUserName(userId);
-            checkRole(userId);
-        }
-    });
 }
 
 function getUserName(userId){

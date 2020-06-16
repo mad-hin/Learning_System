@@ -195,7 +195,7 @@ body.newstuacc-body {
 	transform: translateX(-50%) translateY(-50%);
 	width: 800px;
 	padding: 25px;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.2);
 	text-align: center;
 }
 
