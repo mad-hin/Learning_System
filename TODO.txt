@@ -1,0 +1,4 @@
+bug so far : 
+1.  alret box and confirm box will frezze the app 
+    discover date: 17-06-2020
+    state: solving
