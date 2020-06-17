@@ -1,3 +1,18 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDcsuMIqgVjw7k_BF-Vq49qZj6rOU2wJZc",
+    authDomain: "learning-system-01.firebaseapp.com",
+    databaseURL: "https://learning-system-01.firebaseio.com",
+    projectId: "learning-system-01",
+    storageBucket: "learning-system-01.appspot.com",
+    messagingSenderId: "9597659671",
+    appId: "1:9597659671:web:6483168c4d16fcad9e4a52",
+    measurementId: "G-9724QZ8R0E"
+};
+
+var resgetsterApp = firebase.initializeApp(firebaseConfig, "regester");
+var regesterdb = resgetsterApp.database();
+
 // Check the Sidebar extented or not (default: false)
 var extented = false;
 
@@ -64,7 +79,9 @@ function createAcc() {
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
         console.log("All items filled");
         if (allValid(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
-            console.log("All items are valid")
+            console.log("All items are valid");
+            regester(stuName, stuId, stuEmail, stuPwd);
+            reform();
         }
     }
 }
@@ -87,7 +104,7 @@ function allFill(name, id, email, pwd, compwd) {
     } else if (name == "") {
         unFillPart += ++cnt + ". Student Name\n";
     }
-    
+
     // Check if student ID have been filled or not
     if (id == "" && cnt === 0) {
         unFillPart += "1. Student ID\n";
@@ -201,4 +218,23 @@ function idValid(id) {
     } else {
         alert("Error, invalid formate.\nPlease fill in Student ID in English Characters and Numbers Only\n");
     }
+}
+
+function regester(name, id, email, pwd) {
+    resgetsterApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
+        resgetsterApp.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log("Account created uid:" + user.uid);
+                regesterdb.ref('/users/' + user.uid + '/').set({
+                    email: email,
+                    name: name,
+                    password: pwd,
+                    role: "student",
+                    uid: user.uid,
+                    id: id
+                });
+            }
+        })
+    });
+    resgetsterApp.auth().signOut();
 }

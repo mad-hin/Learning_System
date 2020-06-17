@@ -35,7 +35,6 @@ console.log(fileName[0]);
 
 // Check if this page is the login in page
 if (fileName[0] === "index.html") {
-    firebase.auth().signOut;
     var signIn = document.getElementById("signInbnt");
     var forgotPwd = document.getElementById("fgtpwd");
 

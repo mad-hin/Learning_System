@@ -2,36 +2,36 @@
 <html>
 
 <head>
-    <meta charset = "UTF-8">
+    <meta charset="UTF-8">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src = "https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <script src = "https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
-    <script src = "https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
-    <script src = "https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-    <link rel = "stylesheet" type = "text/css" href = "../CSS/style.css">
-    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src = "../JS/system.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../JS/system.js"></script>
 </head>
 
-<body class = "newstuacc-body">
-    <div id = "mySidebar" class = "sidebar" onmouseover = "collaspeSidebar()" onmouseout = "collaspeSidebar()">
-        <a href = "#" id = "home"><span><i class = "material-icons">home</i><span class = "icon-text">Home</span></span></a><br>
-        <a href = "#" id = "task"><span><i class = "material-icons">menu</i><span class = "icon-text">Task</span></span></a><br>
-        <a href = "#" id = "practise">
+<body class="newstuacc-body">
+    <div id="mySidebar" class="sidebar" onmouseover="collaspeSidebar()" onmouseout="collaspeSidebar()">
+        <a href="#" id="home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></span></a><br>
+        <a href="#" id="task"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></span></a><br>
+        <a href="#" id="practise">
             <span>
-                <i class = "material-icons">menu_book</i>
-                <span class = "icon-text">Practise</span>
+                <i class="material-icons">menu_book</i>
+                <span class="icon-text">Practise</span>
             </span>
         </a>
         <br>
         <hr>
         <br>
 
-        <div class = "teacherView">
-            <a href = "#" id = "newStuAcc">
+        <div class="teacherView">
+            <a href="#" id="newStuAcc">
                 <span>
-                    <i class = "material-icons">person_add</i>
-                    <span class = "icon-text">New Account</span>
+                    <i class="material-icons">person_add</i>
+                    <span class="icon-text">New Account</span>
                 </span>
             </a>
             <br>
@@ -39,41 +39,41 @@
             <br>
         </div>
         
-        <a href = "#" id = "systemLogout">
+        <a href="#" id="systemLogout">
             <span>
-                <i class = "material-icons">exit_to_app</i>
-                <span class = "icon-text">Logout</span>
+                <i class="material-icons">exit_to_app</i>
+                <span class="icon-text">Logout</span>
             </span>
         </a>
         <br>
-        <a href = "#" id = "setting">
+        <a href="#" id="setting">
             <span>
-                <i class = "material-icons">settings</i>
-                <span class = "icon-text">Settings</span>
+                <i class="material-icons">settings</i>
+                <span class="icon-text">Settings</span>
             </span>
         </a>
         <br>
     </div>
 
-    <div id = "main">
-        <div class = "signUpForm">
-            <div class = "signUpTitle" style = "text-align: center; color: black;">
+    <div id="main">
+        <div class="signUpForm">
+            <div class="signUpTitle" style="text-align: center; color: black;">
                 <h1>Create New Student Account</h1>
             </div>
-            <div class = "signUp-box" >
-                <form id = "signUp">
+            <div class="signUp-box" >
+                <form id="signUp">
                     <h3>Student Name</h3>
-                    <input type = "text" name = "stuName" id = "stuName" placeholder = "Input Student Name" required>
+                    <input type="text" name="stuName" id="stuName" placeholder="Input Student Name" required>
                     <h3>Student ID</h3>
-                    <input type = "text" name = "stuId" id = "stuId" placeholder = "Input Student ID" required>
+                    <input type="text" name="stuId" id="stuId" placeholder="Input Student ID" required>
                     <h3>Email</h3>
-                    <input type = "text" name = "stuEmail" id = "stuEmail" placeholder = "Input Email" required>
+                    <input type="text" name="stuEmail" id="stuEmail" placeholder="Input Email" required>
                     <h3>Password</h3>
-                    <input type = "password" name = "stuPwd" id = "stuPwd" placeholder = "Input Password" required>
+                    <input type="password" name="stuPwd" id="stuPwd" placeholder="Input Password" required>
                     <h3>Confirm Password</h3>
-                    <input type = "password" name = "stuConPwd" id = "stuComPwd" placeholder = "Confirm Password" required>
-                    <button name = "redoBnt" type = "button" id = "redoBnt">Reset</button>
-                    <button name = "signUpBnt" type = "button" id = "signUpBnt">Create</button>
+                    <input type="password" name="stuConPwd" id="stuComPwd" placeholder="Confirm Password" required>
+                    <button name="redoBnt" type="button" id="redoBnt">Reset</button>
+                    <button name="signUpBnt" type="button" id="signUpBnt">Create</button>
                 </form>
             </div>
         </div>
