@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 // Import Package "custom-electron-titlebar" To Create Customize Title Bar
 /*const customTitlebar = require('custom-electron-titlebar');
 
-//Initilize Customize Title Bar
+// Initilize Customize Title Bar
 let titleBar = new customTitlebar.Titlebar({
     backgroundColor: customTitlebar.Color.fromHex('#f1f1f1'),
     shadow: true,
@@ -46,7 +46,7 @@ if (fileName[0] === "index.html") {
         }
     });
 
-    //Sign in 
+    // Sign in 
     signIn.addEventListener('click', function () {
         var email = document.getElementById("email").value;
         var pwd = document.getElementById("pwd").value;
@@ -73,13 +73,13 @@ if (fileName[0] === "index.html") {
             }
         });
     })
-    //End of Sign in
+    // End of Sign in
 
-    //Forgot Password
+    // Forgot Password
     forgotPwd.addEventListener('click', function () {
         var email = document.getElementById("email").value;
 
-        //Check if the email field is empty
+        // Check if the email field is empty
         if (email !== '') {
             firebase.auth().sendPasswordResetEmail(email).then(function () {
                 window.alert("Email has been sent to you.")
@@ -104,7 +104,7 @@ if (fileName[0] === "index.html") {
             });
         }
     })
-    //End of Forgot Password
+    // End of Forgot Password
 } else if (fileName[0] === "system.html") {
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){

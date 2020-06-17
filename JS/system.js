@@ -19,6 +19,7 @@ function collaspeSidebar() {
 var fileName = location.pathname.split("/").slice(-1);
 console.log(fileName[0]);
 
+// Things to be load after the window loading
 window.onload = function () {
     var bntHome = document.getElementById("home");
     // Action after clicking the "Home" anchor
@@ -28,7 +29,7 @@ window.onload = function () {
             document.location.href = 'system.html';
         }
     }
-    //End of Action after clicking the "New Account" anchor
+    // End of Action after clicking the "New Account" anchor
     var bntNewStuAcc = document.getElementById("newStuAcc");
     // Action after clicking the "New Account" anchor
     bntNewStuAcc.onclick = function () {
@@ -62,26 +63,32 @@ function createAcc() {
     var stuComPwd = document.getElementById("stuComPwd").value;
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
         console.log("All items filled");
-        if (allChecked(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
+        if (allValid(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
             console.log("All items are valid")
         }
     }
 }
 
+// Reset the input form
 function reform() {
     document.getElementById("signUp").reset();
 }
+// End of function: reform
 
+// Check if all the items have been filled
 function allFill(name, id, email, pwd, compwd) {
     var unFillPart = "";
     var cnt = 0;
+
+    // Check if student name have been filled or not
     if (name == "" && cnt === 0) {
         unFillPart += "1. Student Name\n";
         cnt++;
     } else if (name == "") {
         unFillPart += ++cnt + ". Student Name\n";
     }
-
+    
+    // Check if student ID have been filled or not
     if (id == "" && cnt === 0) {
         unFillPart += "1. Student ID\n";
         cnt++;
@@ -90,6 +97,7 @@ function allFill(name, id, email, pwd, compwd) {
         unFillPart += ++cnt + ". Student ID\n";
     }
 
+    // Check if student Emsil have been filled or not
     if (email == "" && cnt === 0) {
         unFillPart += "1. Student Email\n";
         cnt++;
@@ -97,6 +105,7 @@ function allFill(name, id, email, pwd, compwd) {
         unFillPart += ++cnt + ". Student Email\n";
     }
 
+    // Check if password have been filled or not
     if (pwd == "" && cnt === 0) {
         unFillPart += "1. Password\n";
         cnt++;
@@ -104,6 +113,7 @@ function allFill(name, id, email, pwd, compwd) {
         unFillPart += ++cnt + ". Password\n";
     }
 
+    // Check if confirm password have been filled or not
     if (compwd == "" && cnt === 0) {
         unFillPart += "1. Confirm Password\n";
         cnt++;
@@ -111,6 +121,7 @@ function allFill(name, id, email, pwd, compwd) {
         unFillPart += ++cnt + ". Confirm Password\n";
     }
 
+    // Check if there have any unfilled part(s)
     if (unFillPart !== "") {
         unFillMessage(unFillPart);
         return false;
@@ -118,35 +129,41 @@ function allFill(name, id, email, pwd, compwd) {
         return true;
     }
 }
+// End of function: allFill
 
+// Function to display all the unfilled part(s) (if there have any)
 function unFillMessage(unFillPart) {
     console.log(unFillPart);
     alert("Error, Account cannot be created.\nThe following item(s) have not been filled:\n" + unFillPart);
 }
+// End of function: unFillMessage
 
-function allChecked(name, id, email, pwd, compwd) {
-    if (pwdCheck(pwd, compwd) && emailCheck(email)) {
-
+// Function to check if all the information are valid information
+function allValid(name, id, email, pwd, compwd) {
+    if (pwdValid(pwd, compwd) && emailValid(email) && nameValid(name)) {
+        return true;
     }
 }
+// End of function: allValid
 
-function pwdCheck(pwd, compwd) {
+// Function to check the password is same as the confirm password and is it greater than the min length
+function pwdValid(pwd, compwd) {
+    // Check if the password is same as the confirm password
     if (pwd !== compwd) {
         alert("Password and Confirm Password do not match");
         return false;
     }
 
+    // Check if the password is greater than the min length
     if (!pwdLenCheck(pwd)) {
-        return false
-    }
-
-    if (!pwdLenCheck(compwd)) {
         return false;
     }
 
     return true;
 }
+// End of function: pwdValid
 
+// Check if the password is greater than the min length
 function pwdLenCheck(pwd) {
     if (pwd.length < 4) {
         alert("Password is too short (at least 4 characters).\n");
@@ -155,22 +172,33 @@ function pwdLenCheck(pwd) {
         return true;
     }
 }
+// End of function: pwdLenCheck
 
-function emailCheck(mail) {
+
+function emailValid(mail) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
         return true;
     } else {
-        alert("Error, It is an invalid email address.\nPlease fill in a valid email address\n")
-        return false
+        alert("Error, It is an invalid email address.\nPlease fill in a valid email address\n");
+        return false;
     }
 }
 
-function nameCheck(name) {
+function nameValid(name) {
     if (/^[a-zA-Z_\u4e00-\u9fa5 ]+$/.test(name)) {
         console.log("Name ok\n");
         return true;
     } else {
         console.log("Name not ok\n")
-        alert("Error, invalid formate.\nPlease either fill in Chinese Name or English Name\n")
+        alert("Error, invalid formate.\nPlease either fill in Chinese Name or English Name\n");
+        return false;
+    }
+}
+
+function idValid(id) {
+    if (/^[a-zA-Z0-9]+$/.test(id)) {
+        return true;
+    } else {
+        alert("Error, invalid formate.\nPlease fill in Student ID in English Characters and Numbers Only\n");
     }
 }
