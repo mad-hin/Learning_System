@@ -13,7 +13,7 @@
     <script src="../JS/system.js"></script>
 </head>
 
-<body class="system-body">
+<body class="newstuacc-body">
     <div id="mySidebar" class="sidebar" onmouseover="collaspeSidebar()" onmouseout="collaspeSidebar()">
         <a href="#" id="home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></span></a><br>
         <a href="#" id="task"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></span></a><br>
@@ -62,8 +62,15 @@
     </div>
 
     <div id="main">
-        <div id="welcome">
-            <h1 id="welcomeMessage">you have login</h1>
+        <div class="qtForm">
+            <div class="qtTitle" style="text-align: center; color: black;">
+                <h1>Create New Questions</h1>
+            </div>
+            <div class="qt-box">
+                <form id="qt">
+                    <button name="qtBnt" type="button" id="qtBnt">Create</button>
+                </form>
+            </div>
         </div>
     </div>
     <script>require('../JS/renderer.js')</script>

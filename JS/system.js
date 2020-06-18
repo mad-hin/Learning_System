@@ -45,13 +45,22 @@ window.onload = function () {
         }
     }
     // End of Action after clicking the "New Account" anchor
+    
     var bntNewStuAcc = document.getElementById("newStuAcc");
     // Action after clicking the "New Account" anchor
     bntNewStuAcc.onclick = function () {
         // Direct to "newstuacc.html"
         document.location.href = 'newstuacc.html';
     }
-    // End of Action after clicking the "New Student Account" anchor
+    // End of Action after clicking the "New Question" anchor
+
+    var bntNewQt = document.getElementById("newqt");
+    // Action after clicking the "New Question" anchor
+    bntNewQt.onclick = function () {
+        // Direct to "newqt.html"
+        document.location.href = 'newqt.html';
+    }
+    // End of Action after clicking the "New Question" anchor
 
     if (fileName[0] === "newstuacc.html") {
         var reset = document.getElementById("redoBnt");
