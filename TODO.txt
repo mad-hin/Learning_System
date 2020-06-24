@@ -2,3 +2,12 @@ bug so far :
 1.  alret box and confirm box will frezze the app 
     discover date: 17-06-2020
     state: solving
+    
+Windows :
+1.  Login (Done)
+2.  Welcome Page (Progressing)
+3.  Task (Progressing)
+4.  Practise (Progressing)
+5.  Add New Student (Done)
+6.  Add New Question (Progressing)
+7.  Setting (Progressing)
