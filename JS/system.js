@@ -1,13 +1,13 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyDcsuMIqgVjw7k_BF-Vq49qZj6rOU2wJZc",
-    authDomain: "learning-system-01.firebaseapp.com",
-    databaseURL: "https://learning-system-01.firebaseio.com",
-    projectId: "learning-system-01",
-    storageBucket: "learning-system-01.appspot.com",
-    messagingSenderId: "9597659671",
-    appId: "1:9597659671:web:6483168c4d16fcad9e4a52",
-    measurementId: "G-9724QZ8R0E"
+    apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
+    authDomain: "learning-system-2d77c.firebaseapp.com",
+    databaseURL: "https://learning-system-2d77c.firebaseio.com",
+    projectId: "learning-system-2d77c",
+    storageBucket: "learning-system-2d77c.appspot.com",
+    messagingSenderId: "645352697427",
+    appId: "1:645352697427:web:c6a6ebdef072df03ade0a6",
+    measurementId: "G-0K6LJ79XVW"
 };
 
 var resgetsterApp = firebase.initializeApp(firebaseConfig, "regester");
