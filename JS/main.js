@@ -3,6 +3,8 @@ const firebase = require('firebase')
 function createWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
+        width: 1280,
+        height :1024,
         webPreferences: {
             nodeIntegration: true
         },
@@ -16,7 +18,7 @@ function createWindow() {
     win.removeMenu(null);//For Windows and Linux only
 
     // Broweser Window to be maximize (a.k.a "Fullscreen")
-    win.maximize();
+    //win.maximize();
 
     //Set Broweser Window be not resizable
     win.setResizable(false);

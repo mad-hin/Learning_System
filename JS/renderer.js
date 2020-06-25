@@ -51,6 +51,12 @@ if (fileName[0] === "index.html") {
         var pwd = document.getElementById("pwd").value;
 
         firebase.auth().signInWithEmailAndPassword(email, pwd).then(function () {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    var userId = user.uid;
+                    passwordUpdate(userId, pwd)
+                }
+            });
             document.location.href = 'system.html';
         }).catch(function (error) {
             if (error != null) {
@@ -150,6 +156,17 @@ function checkRole(userId) {
                 for (var i = 0; i < teacherView.length; i++) {
                     teacherView[i].style.display = 'none';
                 }
+            }
+        }
+    )
+}
+
+function passwordUpdate(userId, currPassword) {
+    var updates = {};
+    db.ref('/users/' + userId + '/password').once('value').then(
+        pd => {
+            if (pd.val !== currPassword) {
+                updates['/users/' + userId + '/password'] = currPassword
             }
         }
     )
