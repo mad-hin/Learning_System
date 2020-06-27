@@ -191,8 +191,8 @@ function pwdValid(pwd, compwd) {
 
 // Check if the password is greater than the min length
 function pwdLenCheck(pwd) {
-    if (pwd.length < 4) {
-        alert("Password is too short (at least 4 characters).\n");
+    if (pwd.length < 6) {
+        alert("Password is too short (at least 6 characters).\n");
         return false;
     } else {
         return true;
@@ -222,7 +222,7 @@ function nameValid(name) {
 }
 
 function idValid(id) {
-    if (/^[a-zA-Z0-9]+$/.test(id)) {
+    if (/^[a-zA-Z][0-9]+$/.test(id)) {
         return true;
     } else {
         alert("Error, invalid formate.\nPlease fill in Student ID in English Characters and Numbers Only\n");
