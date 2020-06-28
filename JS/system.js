@@ -166,7 +166,7 @@ function unFillMessage(unFillPart) {
 
 // Function to check if all the information are valid information
 function allValid(name, id, email, pwd, compwd) {
-    if (pwdValid(pwd, compwd) && emailValid(email) && nameValid(name)) {
+    if (pwdValid(pwd, compwd) && emailValid(email) && nameValid(name)&&idValid(id)) {
         return true;
     }
 }
@@ -222,10 +222,10 @@ function nameValid(name) {
 }
 
 function idValid(id) {
-    if (/^[a-zA-Z][0-9]+$/.test(id)) {
+    if (/^[a-zA-Z][a-zA-Z0-9]+$/.test(id)) {
         return true;
     } else {
-        alert("Error, invalid formate.\nPlease fill in Student ID in English Characters and Numbers Only\n");
+        alert("Error, invalid formate.\nPlease fill in Student ID with English Character(s) plus Numbers.\nE.g.s114514\n");
     }
 }
 
