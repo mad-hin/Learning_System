@@ -10,8 +10,8 @@ var firebaseConfig = {
     measurementId: "G-0K6LJ79XVW"
 };
 
-var resgetsterApp = firebase.initializeApp(firebaseConfig, "regester");
-var regesterdb = resgetsterApp.database();
+var registerApp = firebase.initializeApp(firebaseConfig, "register");
+var registerdb = registerApp.database();
 
 // Check the Sidebar extented or not (default: false)
 var extented = false;
@@ -89,7 +89,7 @@ function createAcc() {
         console.log("All items filled");
         if (allValid(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
             console.log("All items are valid");
-            regester(stuName, stuId, stuEmail, stuPwd);
+            register(stuName, stuId, stuEmail, stuPwd);
             reform();
         }
     }
@@ -229,12 +229,12 @@ function idValid(id) {
     }
 }
 
-function regester(name, id, email, pwd) {
-    resgetsterApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
-        resgetsterApp.auth().onAuthStateChanged(function (user) {
+function register(name, id, email, pwd) {
+    registerApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
+        registerApp.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log("Account created uid:" + user.uid);
-                regesterdb.ref('/users/' + user.uid + '/').set({
+                registerdb.ref('/users/' + user.uid + '/').set({
                     email: email,
                     name: name,
                     password: pwd,
@@ -246,5 +246,5 @@ function regester(name, id, email, pwd) {
             }
         })
     });
-    resgetsterApp.auth().signOut();
+    registerApp.auth().signOut();
 }
