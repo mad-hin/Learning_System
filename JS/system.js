@@ -212,10 +212,10 @@ function emailValid(mail) {
 
 function nameValid(name) {
     if (/^[a-zA-Z_\u4e00-\u9fa5 ]+$/.test(name)) {
-        console.log("Name ok\n");
+        console.log("Name ok\n");//For Debug
         return true;
     } else {
-        console.log("Name not ok\n")
+        console.log("Name not ok\n")//For Debug
         alert("Error, invalid formate.\nPlease either fill in Chinese Name or English Name\n");
         return false;
     }
@@ -242,6 +242,7 @@ function regester(name, id, email, pwd) {
                     uid: user.uid,
                     id: id
                 });
+                alert("Account of" + id + " " + name + " created sussefully\n");
             }
         })
     });
