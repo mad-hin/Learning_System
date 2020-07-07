@@ -17,11 +17,14 @@ function createWindow() {
     // Disable default menubar
     win.removeMenu(null);//For Windows and Linux only
 
-    // Broweser Window to be maximize (a.k.a "Fullscreen")
+    // Browser Window to be maximize (a.k.a "Fullscreen")
     //win.maximize();
 
-    //Set Broweser Window be not resizable
+    //Set Browser Window be not resizable
     win.setResizable(false);
+
+    //Set Browser Window be not maximizable
+    win.setMaximizable(false);
     
     //Customize Menubar
     var menu = Menu.buildFromTemplate([
