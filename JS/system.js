@@ -222,7 +222,7 @@ function nameValid(name) {
 }
 
 function idValid(id) {
-    if (/^[a-zA-Z][a-zA-Z0-9]$/.test(id)) {
+    if (/^[a-zA-Z][a-zA-Z0-9]+$/.test(id)) {
         return true;
     } else {
         alert("Error, invalid formate.\nPlease fill in Student ID with English Character(s) plus Numbers.\nE.g.s114514\n");
@@ -242,7 +242,7 @@ function register(name, id, email, pwd) {
                     uid: user.uid,
                     id: id
                 });
-                alert("Account of" + id + " " + name + " created sussefully\n");
+                alert("Account of ID:" + id + " Name: " + name + " created successfully\n");
             }
         })
     });
