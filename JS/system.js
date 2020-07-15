@@ -19,7 +19,7 @@ var extented = false;
 // Function to make the sidebar extent (pop out)
 function collaspeSidebar() {
     if (!extented) {
-        // Change the sidebar width and extent to 180px
+        // Change the sidebar width and extent to 200px
         document.getElementById("mySidebar").style.width = "200px";
         this.extented = true;
     } else {
@@ -106,7 +106,19 @@ function createAcc() {
 
 // Reset the input form
 function reform() {
-    document.getElementById("signUp").reset();
+    if (fileName[0] === "newstuacc.html") {
+        document.getElementById("signUp").reset();
+    } else if (fileName[0] === "newqt.html") {
+        console.log("reformed");
+        var v = document.getElementById("qtType");
+        var qtNum = document.getElementById("qtNumber");
+        var nextAct = document.getElementById("nextqtBnt");
+        v.style.display = "block";
+        qtNum.style.display = "block";
+        nextAct.innerHTML = "Next Question";
+        nextAct.style.display = "none";
+        document.getElementById("nextBnt").style.display = "block";
+    }
 }
 // End of function: reform
 
@@ -262,22 +274,19 @@ function showQusetionNumber() {
     var v = document.getElementById("qtType");
     console.log(v.selectedIndex);
     if (v.selectedIndex == 0) {
-        document.getElementById("qtNumber").style.visibility = "visible";
+        document.getElementById("qtNumber").style.display = "block";
     } else {
-        document.getElementById("qtNumber").style.visibility = "hidden";
+        document.getElementById("qtNumber").style.display = "none";
     }
 }
 
 function createQusetion() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
+    var nextAct = document.getElementById("nextqtBnt");
     var num;
     var cnt = 1;
     var type;
-    v.style.display = "none";
-    qtNum.style.display = "none";
-    document.getElementById("nextBnt").style.display = "none";
-    document.getElementById("nextqtBnt").style.visibility = "visible";
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -285,11 +294,20 @@ function createQusetion() {
         num = 1;
         type = "practise";
     }
-    console.log(num == cnt);
-    if (cnt == num) {
-        console.log("cnt = num");
-        document.getElementById("nextqtBnt").innerHTML = "Create New " + type;
-    } else {
-        
-    }
+    v.style.display = "none";
+    qtNum.style.display = "none";
+    document.getElementById("nextBnt").style.display = "none";
+    nextAct.style.display = "block";
+    console.log(qtNum.value);
+    console.log(cnt);
+    console.log(cnt == num);
+    nextAct.addEventListener('click', function () {
+        if (cnt == num) {
+            console.log(cnt, num, "reform");
+            nextAct.innerHTML = "Create New " + type;
+        } else {
+            console.log(cnt , num);
+            cnt++;
+        }
+    })
 }

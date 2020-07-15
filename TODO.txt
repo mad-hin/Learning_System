@@ -1,5 +1,5 @@
 bug so far : 
-1.  alret box and confirm box will frezze the app 
+1.  alret box and confirm box will frezze the app (windows only)
     discover date: 17-06-2020
     state: solving
     
