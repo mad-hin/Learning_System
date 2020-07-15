@@ -289,5 +289,7 @@ function createQusetion() {
     if (cnt == num) {
         console.log("cnt = num");
         document.getElementById("nextqtBnt").innerHTML = "Create New " + type;
+    } else {
+        
     }
 }
