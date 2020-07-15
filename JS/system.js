@@ -81,6 +81,7 @@ window.onload = function () {
     if (fileName[0] === "newqt.html") {
         showQusetionNumber();
         var nextStep = document.getElementById("nextBnt");
+
         nextStep.addEventListener('click', function () {
             createQusetion();
         })
@@ -268,5 +269,25 @@ function showQusetionNumber() {
 }
 
 function createQusetion() {
-    
+    var v = document.getElementById("qtType");
+    var qtNum = document.getElementById("qtNumber");
+    var num;
+    var cnt = 1;
+    var type;
+    v.style.display = "none";
+    qtNum.style.display = "none";
+    document.getElementById("nextBnt").style.display = "none";
+    document.getElementById("nextqtBnt").style.visibility = "visible";
+    if (v.selectedIndex == 0) {
+        num = qtNum.value;
+        type = "task";
+    } else {
+        num = 1;
+        type = "practise";
+    }
+    console.log(num == cnt);
+    if (cnt == num) {
+        console.log("cnt = num");
+        document.getElementById("nextqtBnt").innerHTML = "Create New " + type;
+    }
 }
