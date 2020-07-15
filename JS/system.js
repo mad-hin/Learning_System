@@ -20,7 +20,7 @@ var extented = false;
 function collaspeSidebar() {
     if (!extented) {
         // Change the sidebar width and extent to 180px
-        document.getElementById("mySidebar").style.width = "180px";
+        document.getElementById("mySidebar").style.width = "200px";
         this.extented = true;
     } else {
         // Change the sidebar width and close to 50px
