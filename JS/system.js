@@ -77,6 +77,14 @@ window.onload = function () {
             createAcc();
         })
     }
+
+    if (fileName[0] === "newqt.html") {
+        showQusetionNumber();
+        var nextStep = document.getElementById("nextBnt");
+        nextStep.addEventListener('click', function () {
+            createQusetion();
+        })
+    }
 }
 
 function createAcc() {
@@ -247,4 +255,18 @@ function register(name, id, email, pwd) {
         })
     });
     registerApp.auth().signOut();
+}
+
+function showQusetionNumber() {
+    var v = document.getElementById("qtType");
+    console.log(v.selectedIndex);
+    if (v.selectedIndex == 0) {
+        document.getElementById("qtNumber").style.visibility = "visible";
+    } else {
+        document.getElementById("qtNumber").style.visibility = "hidden";
+    }
+}
+
+function createQusetion() {
+    
 }

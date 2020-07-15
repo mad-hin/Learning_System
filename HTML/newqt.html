@@ -68,11 +68,13 @@
             </div>
             <div class="qt-box">
                 <form id="qt">
-                    <select>
+                    <select id="qtType" onchange="showQusetionNumber()">
                         <option>Task</option>
                         <option>Practise</option>
                     </select>
-                    <button name="qtBnt" type="button" id="qtBnt">Create</button>
+                    <input type="number" name="qtNumber" id="qtNumber" value="1" required style="visibility: hidden;">
+                    <br>
+                    <button name="nextBnt" type="button" id="nextBnt">Next</button>
                 </form>
             </div>
         </div>
