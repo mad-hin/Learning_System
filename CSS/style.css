@@ -272,3 +272,34 @@ body.newstuacc-body {
 	resize: none;
 	display: none;
 }
+
+.qtForm{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 800px;
+	padding: 25px;
+	background: rgba(0,0,0,0.2);
+	text-align: center;
+}
+
+.qtForm input[type="number"] {
+	border: none;
+	background-color: transparent;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #ffffff;
+	padding: 14px 10px;
+	width: 400px;
+	outline: none;
+	color: white;
+	border-radius: 35px;
+	transition: 0.25s;
+	font-size: medium;
+}
+
+#nextBnt{
+	border: none;
+}

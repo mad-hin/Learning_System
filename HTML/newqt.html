@@ -69,13 +69,13 @@
             </div>
             <div class="qt-box">
                 <form id="qt">
-                    <label id="qtTypeLb">Question Type:</label>
+                    <h3 id="qtTypeLb">Question Type:</h3>
                     <select id="qtType" onchange="showQusetionNumber()">
                         <option>Task</option>
                         <option>Practise</option>
                     </select>
                     <br>
-                    <label id="qtLevelLb">Level:</label>
+                    <h3 id="qtLevelLb">Level:</h3>
                     <select id="qtLevel" onchange="showQusetionNumber()">
                         <option>Form 1</option>
                         <option>Form 2</option>
@@ -85,7 +85,7 @@
                         <option>Form 6</option>
                     </select>
                     <br>
-                    <input type="number" name="qtNumber" id="qtNumber" value="1" required>
+                    <input type="number" name="qtNumber" id="qtNumber" min="1" max="100" value="1" required>
                     <br>
                     <button name="nextBnt" type="button" id="nextBnt">Next</button>
                     <textarea cols="100" rows="10" id="ans1"></textarea>
