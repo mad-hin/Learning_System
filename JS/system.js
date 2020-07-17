@@ -308,7 +308,7 @@ function chooseType() {
 
 function createQuestion(target) {
     var cnt = 0;
-    var qt;
+    var qt, correctAns;
     var ans1 = document.getElementById("ans1").value;
     var ans2 = document.getElementById("ans2").value;
     var ans3 = document.getElementById("ans3").value;
