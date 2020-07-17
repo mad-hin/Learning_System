@@ -81,7 +81,6 @@ window.onload = function () {
     if (fileName[0] === "newqt.html") {
         showQusetionNumber();
         var nextStep = document.getElementById("nextBnt");
-        var nextAct = document.getElementById("nextqtBnt");
 
         nextStep.addEventListener('click', function () {
             chooseType();
@@ -285,6 +284,7 @@ function showQusetionNumber() {
 function chooseType() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
+    var nextAct = document.getElementById("nextqtBnt");
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -294,7 +294,14 @@ function chooseType() {
     }
     v.style.display = "none";
     qtNum.style.display = "none";
+    document.getElementById("qtTypeLb").style.display = "none";
+    document.getElementById("qtLevelLb").style.display = "none";
+    document.getElementById("qtLevel").style.display = "none";
     document.getElementById("nextBnt").style.display = "none";
+    document.getElementById("ans1").style.display = "block";
+    document.getElementById("ans2").style.display = "block";
+    document.getElementById("ans3").style.display = "block";
+    document.getElementById("ans4").style.display = "block";
     nextAct.style.display = "block";
     createQuestion(qtNum);
 }
