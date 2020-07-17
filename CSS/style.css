@@ -267,3 +267,8 @@ body.newstuacc-body {
 .signUp-box ::placeholder{
 	color: white;
 }
+
+#ans1, #ans2,#ans3,#ans4 {
+	resize: none;
+	display: none;
+}

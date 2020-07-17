@@ -81,10 +81,12 @@ window.onload = function () {
     if (fileName[0] === "newqt.html") {
         showQusetionNumber();
         var nextStep = document.getElementById("nextBnt");
+        var nextAct = document.getElementById("nextqtBnt");
 
         nextStep.addEventListener('click', function () {
-            createQusetion();
+            chooseType();
         })
+
     }
 }
 
@@ -280,13 +282,9 @@ function showQusetionNumber() {
     }
 }
 
-function createQusetion() {
+function chooseType() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
-    var nextAct = document.getElementById("nextqtBnt");
-    var num;
-    var cnt = 1;
-    var type;
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -298,16 +296,17 @@ function createQusetion() {
     qtNum.style.display = "none";
     document.getElementById("nextBnt").style.display = "none";
     nextAct.style.display = "block";
-    console.log(qtNum.value);
-    console.log(cnt);
-    console.log(cnt == num);
+    createQuestion(qtNum);
+}
+
+function createQuestion(target) {
+    var cnt = 0;
+    var qt;
+    var ans1 = document.getElementById("ans1").value;
+    var ans2 = document.getElementById("ans2").value;
+    var ans3 = document.getElementById("ans3").value;
+    var ans4 = document.getElementById("ans4").value;
     nextAct.addEventListener('click', function () {
-        if (cnt == num) {
-            console.log(cnt, num, "reform");
-            nextAct.innerHTML = "Create New " + type;
-        } else {
-            console.log(cnt , num);
-            cnt++;
-        }
+        cnt++;
     })
 }
