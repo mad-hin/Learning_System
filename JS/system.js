@@ -302,6 +302,7 @@ function chooseType() {
     document.getElementById("ans2").style.display = "block";
     document.getElementById("ans3").style.display = "block";
     document.getElementById("ans4").style.display = "block";
+    document.getElementById("goBackBnt").style.display = "block";
     nextAct.style.display = "block";
     createQuestion(qtNum);
 }
