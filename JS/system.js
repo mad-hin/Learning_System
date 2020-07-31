@@ -109,7 +109,7 @@ function createAcc() {
 function reform() {
     if (fileName[0] === "newstuacc.html") {
         document.getElementById("signUp").reset();
-    } else if (fileName[0] === "newqt.html") {
+    } /*else if (fileName[0] === "newqt.html") {
         console.log("reformed");
         var v = document.getElementById("qtType");
         var qtNum = document.getElementById("qtNumber");
@@ -119,7 +119,7 @@ function reform() {
         nextAct.innerHTML = "Next Question";
         nextAct.style.display = "none";
         document.getElementById("nextBnt").style.display = "block";
-    }
+    }*/
 }
 // End of function: reform
 
@@ -292,6 +292,52 @@ function chooseType() {
         num = 1;
         type = "practise";
     }
+    showQuestionInputBox();
+    createQuestion(qtNum);
+}
+
+function createQuestion(target) {
+    var nextAct = document.getElementById("nextqtBnt");
+    var backAct = document.getElementById("goBackBnt");
+    var cnt = 0;
+    var nwqt = [], inputItem = {}, correctAns;
+    nextAct.addEventListener('click', function () {
+        var ans1 = document.getElementById("ans1").value;
+        var ans2 = document.getElementById("ans2").value;
+        var ans3 = document.getElementById("ans3").value;
+        var ans4 = document.getElementById("ans4").value;
+        if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "") {
+            inputItem = {
+                id: cnt,
+                a1: ans1,
+                a2: ans2,
+                a3: ans3,
+                a4: ans4
+            };
+            document.getElementById("ans1").value = "";
+            document.getElementById("ans2").value = "";
+            document.getElementById("ans4").value = "";
+            document.getElementById("ans3").value = "";
+            nwqt[cnt] = inputItem;
+            cnt++;
+        }
+        console.log(cnt);
+    })
+    backAct.addEventListener('click', function () {
+        if (cnt > 0) {
+            cnt--;
+            document.getElementById("ans1").value = nwqt[cnt].a1;
+            document.getElementById("ans2").value = nwqt[cnt].a2;
+            document.getElementById("ans3").value = nwqt[cnt].a3;
+            document.getElementById("ans4").value = nwqt[cnt].a4;
+        }
+    })
+}
+
+function showQuestionInputBox() {
+    var v = document.getElementById("qtType");
+    var qtNum = document.getElementById("qtNumber");
+    var nextAct = document.getElementById("nextqtBnt");
     v.style.display = "none";
     qtNum.style.display = "none";
     document.getElementById("qtTypeLb").style.display = "none";
@@ -302,19 +348,6 @@ function chooseType() {
     document.getElementById("ans2").style.display = "block";
     document.getElementById("ans3").style.display = "block";
     document.getElementById("ans4").style.display = "block";
-    document.getElementById("goBackBnt").style.display = "block";
-    nextAct.style.display = "block";
-    createQuestion(qtNum);
-}
-
-function createQuestion(target) {
-    var cnt = 0;
-    var qt, correctAns;
-    var ans1 = document.getElementById("ans1").value;
-    var ans2 = document.getElementById("ans2").value;
-    var ans3 = document.getElementById("ans3").value;
-    var ans4 = document.getElementById("ans4").value;
-    nextAct.addEventListener('click', function () {
-        cnt++;
-    })
+    document.getElementById("goBackBnt").style.display = "inline";
+    nextAct.style.display = "inline";
 }
