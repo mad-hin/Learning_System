@@ -271,6 +271,7 @@ function register(name, id, email, pwd) {
     registerApp.auth().signOut();
 }
 
+// show the number of questions that the teacher want to make 
 function showQusetionNumber() {
     var v = document.getElementById("qtType");
     console.log(v.selectedIndex);
@@ -280,11 +281,12 @@ function showQusetionNumber() {
         document.getElementById("qtNumber").style.display = "none";
     }
 }
+// End of function showQusetionNumber
 
+// Choose the type of quiz the teacher want to set
 function chooseType() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
-    var nextAct = document.getElementById("nextqtBnt");
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -293,10 +295,10 @@ function chooseType() {
         type = "practise";
     }
     showQuestionInputBox();
-    createQuestion(qtNum);
+    createQuestion(qtNum, type);
 }
 
-function createQuestion(target) {
+function createQuestion(target, type) {
     var nextAct = document.getElementById("nextqtBnt");
     var backAct = document.getElementById("goBackBnt");
     var cnt = 0;
@@ -306,7 +308,9 @@ function createQuestion(target) {
         var ans2 = document.getElementById("ans2").value;
         var ans3 = document.getElementById("ans3").value;
         var ans4 = document.getElementById("ans4").value;
+        // Make sure all items have been inputed before going to next question
         if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "") {
+            // write values to object "inputItem"
             inputItem = {
                 id: cnt,
                 a1: ans1,
@@ -314,13 +318,21 @@ function createQuestion(target) {
                 a3: ans3,
                 a4: ans4
             };
+            // clear the textarea
             document.getElementById("ans1").value = "";
             document.getElementById("ans2").value = "";
             document.getElementById("ans4").value = "";
             document.getElementById("ans3").value = "";
+            // write the object to the array
             nwqt[cnt] = inputItem;
             cnt++;
+
+            if (cnt === target) {
+                addQuestionToDatabase(nwqt, type);
+            }
         }
+        // Make "Back" button clickable
+        document.getElementById("goBackBnt").disabled = false;
         console.log(cnt);
     })
     backAct.addEventListener('click', function () {
@@ -330,10 +342,14 @@ function createQuestion(target) {
             document.getElementById("ans2").value = nwqt[cnt].a2;
             document.getElementById("ans3").value = nwqt[cnt].a3;
             document.getElementById("ans4").value = nwqt[cnt].a4;
+        } else if (cnt === 0) {
+            // Make "Back" button non-clickable
+            document.getElementById("goBackBnt").disabled = true;
         }
     })
 }
 
+// show the textare for input question
 function showQuestionInputBox() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
@@ -351,3 +367,10 @@ function showQuestionInputBox() {
     document.getElementById("goBackBnt").style.display = "inline";
     nextAct.style.display = "inline";
 }
+// End of function showQuestionInputBox
+
+// add the questions to the firebase database
+function addQuestionToDatabase(inputQuestions, type) {
+    // TODO add the questions to the firebase database
+}
+//End of function addQuestionToDatabase
