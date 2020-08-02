@@ -318,11 +318,7 @@ function createQuestion(target, type) {
                 a3: ans3,
                 a4: ans4
             };
-            // clear the textarea
-            document.getElementById("ans1").value = "";
-            document.getElementById("ans2").value = "";
-            document.getElementById("ans4").value = "";
-            document.getElementById("ans3").value = "";
+            clearTextArea();
             // write the object to the array
             nwqt[cnt] = inputItem;
             cnt++;
@@ -370,7 +366,16 @@ function showQuestionInputBox() {
 // End of function showQuestionInputBox
 
 // add the questions to the firebase database
-function addQuestionToDatabase(inputQuestions, type) {
+function addQuestionToDatabase(inputedQuestions, type) {
     // TODO add the questions to the firebase database
 }
 //End of function addQuestionToDatabase
+
+// clear the textarea
+function clearTextArea() {
+    document.getElementById("ans1").value = "";
+    document.getElementById("ans2").value = "";
+    document.getElementById("ans4").value = "";
+    document.getElementById("ans3").value = "";
+}
+// End od function clearTextArea
