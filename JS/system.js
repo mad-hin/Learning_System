@@ -80,6 +80,7 @@ window.onload = function () {
 
     if (fileName[0] === "newqt.html") {
         showQusetionNumber();
+        clearTextArea();
         var nextStep = document.getElementById("nextBnt");
 
         nextStep.addEventListener('click', function () {
@@ -309,7 +310,7 @@ function createQuestion(target, type) {
         var ans3 = document.getElementById("ans3").value;
         var ans4 = document.getElementById("ans4").value;
         // Make sure all items have been inputed before going to next question
-        if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "") {
+        if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "" && qtDes !== "") {
             // write values to object "inputItem"
             inputItem = {
                 id: cnt,
@@ -356,6 +357,7 @@ function showQuestionInputBox() {
     document.getElementById("qtLevelLb").style.display = "none";
     document.getElementById("qtLevel").style.display = "none";
     document.getElementById("nextBnt").style.display = "none";
+    document.getElementById("qtDes").style.display = "block";
     document.getElementById("ans1").style.display = "block";
     document.getElementById("ans2").style.display = "block";
     document.getElementById("ans3").style.display = "block";
@@ -373,6 +375,7 @@ function addQuestionToDatabase(inputedQuestions, type) {
 
 // clear the textarea
 function clearTextArea() {
+    document.getElementById("qtDes").value = "";
     document.getElementById("ans1").value = "";
     document.getElementById("ans2").value = "";
     document.getElementById("ans4").value = "";
