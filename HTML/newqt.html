@@ -69,34 +69,38 @@
             </div>
             <div class="qt-box">
                 <form id="qt">
-                    <h3 id="qtTypeLb">Question Type:</h3>
-                    <select id="qtType" onchange="showQusetionNumber()">
-                        <option>Task</option>
-                        <option>Practise</option>
-                    </select>
+                    <div class="firstStage">
+                        <h3 id="qtTypeLb">Question Type:</h3>
+                        <select id="qtType" onchange="showQusetionNumber()">
+                            <option>Task</option>
+                            <option>Practise</option>
+                        </select>
+                        <br>
+                        <h3 id="qtSubjectLb">Subject:</h3>
+                        <select id="qtSubject"></select>
+                        <h3 id="qtLevelLb">Level:</h3>
+                        <select id="qtLevel">
+                            <option>Form 1</option>
+                            <option>Form 2</option>
+                            <option>Form 3</option>
+                            <option>Form 4</option>
+                            <option>Form 5</option>
+                            <option>Form 6</option>
+                        </select>
+                        <br>
+                        <input type="number" name="qtNumber" id="qtNumber" min="1" max="100" value="1" required>
+                        <br>
+                        <button name="nextBnt" type="button" id="nextBnt">Next</button>
+                    </div>
+                    <textarea cols="100" rows="9" id="qtDes" placeholder="Question Description" required></textarea>
                     <br>
-                    <h3 id="qtLevelLb">Level:</h3>
-                    <select id="qtLevel" onchange="showQusetionNumber()">
-                        <option>Form 1</option>
-                        <option>Form 2</option>
-                        <option>Form 3</option>
-                        <option>Form 4</option>
-                        <option>Form 5</option>
-                        <option>Form 6</option>
-                    </select>
+                    <textarea cols="100" rows="9" id="ans1" placeholder="Please input answer 1" required></textarea>
                     <br>
-                    <input type="number" name="qtNumber" id="qtNumber" min="1" max="100" value="1" required>
+                    <textarea cols="100" rows="9" id="ans2" placeholder="Please input answer 2" required></textarea>
                     <br>
-                    <button name="nextBnt" type="button" id="nextBnt">Next</button>
-                    <textarea cols="100" rows="10" id="qtDes" placeholder="Please Question Description" required></textarea>
+                    <textarea cols="100" rows="9" id="ans3" placeholder="Please input answer 3" required></textarea>
                     <br>
-                    <textarea cols="100" rows="10" id="ans1" placeholder="Please input answer 1" required></textarea>
-                    <br>
-                    <textarea cols="100" rows="10" id="ans2" placeholder="Please input answer 2" required></textarea>
-                    <br>
-                    <textarea cols="100" rows="10" id="ans3" placeholder="Please input answer 3" required></textarea>
-                    <br>
-                    <textarea cols="100" rows="10" id="ans4" placeholder="Please input answer 4" required></textarea>
+                    <textarea cols="100" rows="9" id="ans4" placeholder="Please input answer 4" required></textarea>
                     <br>
                     <button name="goBackBnt" type="button" id="goBackBnt" style="display: none;" disabled>Back</button>
                     <button name="nextqtBnt" type="button" id="nextqtBnt" style="display: none;">Next Question</button>

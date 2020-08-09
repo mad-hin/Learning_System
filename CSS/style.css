@@ -268,7 +268,7 @@ body.newstuacc-body {
 	color: white;
 }
 
-#ans1, #ans2,#ans3,#ans4 {
+#ans1, #ans2,#ans3,#ans4, #qtDes {
 	resize: none;
 	display: none;
 }

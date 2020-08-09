@@ -348,15 +348,11 @@ function createQuestion(target, type) {
 
 // show the textare for input question
 function showQuestionInputBox() {
-    var v = document.getElementById("qtType");
-    var qtNum = document.getElementById("qtNumber");
     var nextAct = document.getElementById("nextqtBnt");
-    v.style.display = "none";
-    qtNum.style.display = "none";
-    document.getElementById("qtTypeLb").style.display = "none";
-    document.getElementById("qtLevelLb").style.display = "none";
-    document.getElementById("qtLevel").style.display = "none";
-    document.getElementById("nextBnt").style.display = "none";
+    var f = document.getElementsByClassName("firstStage")
+    for (var i = 0; i < f.length; i++) {
+        f[i].style.display = 'none';
+    }
     document.getElementById("qtDes").style.display = "block";
     document.getElementById("ans1").style.display = "block";
     document.getElementById("ans2").style.display = "block";
@@ -381,4 +377,4 @@ function clearTextArea() {
     document.getElementById("ans4").value = "";
     document.getElementById("ans3").value = "";
 }
-// End od function clearTextArea
+// End of function clearTextArea

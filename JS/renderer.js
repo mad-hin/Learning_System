@@ -136,6 +136,9 @@ if (fileName[0] !== "index.html") {
     }
     // End of Action after clicking the "Logout" anchor
 }
+if (fileName[0] === "newqt.html") {
+    loadSubject();
+}
 
 function getUserName(userId){
     db.ref('/users/'+userId+'/name').once('value').then(
@@ -170,4 +173,17 @@ function passwordUpdate(userId, currPassword) {
             }
         }
     )
+}
+
+// Load the subject name to "qtTopic"
+function loadSubject() {
+    db.ref("/subject/").once("value").then(result => {
+        let sub = result.val();
+        for (const key of Object.keys(sub)) {
+            const subjectName = sub[key];
+            var opt = document.createElement("OPTION");
+            opt.appendChild(document.createTextNode(subjectName));
+            document.getElementById("qtSubject").appendChild(opt);
+        }
+    });
 }
