@@ -1,3 +1,4 @@
+import { addQuestionToDatabase } from "./renderer.js";
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -12,23 +13,6 @@ var firebaseConfig = {
 
 var registerApp = firebase.initializeApp(firebaseConfig, "register");
 var registerdb = registerApp.database();
-
-// Check the Sidebar extented or not (default: false)
-var extented = false;
-
-// Function to make the sidebar extent (pop out)
-function collaspeSidebar() {
-    if (!extented) {
-        // Change the sidebar width and extent to 200px
-        document.getElementById("mySidebar").style.width = "200px";
-        this.extented = true;
-    } else {
-        // Change the sidebar width and close to 50px
-        document.getElementById("mySidebar").style.width = "50px";
-        this.extented = false;
-    }
-}
-// End of Function: collaspeSidebar()
 
 // Get Current HTML Page Name
 var fileName = location.pathname.split("/").slice(-1);
@@ -288,6 +272,7 @@ function showQusetionNumber() {
 function chooseType() {
     var v = document.getElementById("qtType");
     var qtNum = document.getElementById("qtNumber");
+    var num, type;
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -296,7 +281,7 @@ function chooseType() {
         type = "practise";
     }
     showQuestionInputBox();
-    createQuestion(qtNum, type);
+    createQuestion(num, type);
 }
 
 function createQuestion(target, type) {
@@ -327,9 +312,9 @@ function createQuestion(target, type) {
             if (cnt === target) {
                 addQuestionToDatabase(nwqt, type);
             }
+            // Make "Back" button clickable
+            document.getElementById("goBackBnt").disabled = false;
         }
-        // Make "Back" button clickable
-        document.getElementById("goBackBnt").disabled = false;
         console.log(cnt);
     })
     backAct.addEventListener('click', function () {
@@ -362,12 +347,6 @@ function showQuestionInputBox() {
     nextAct.style.display = "inline";
 }
 // End of function showQuestionInputBox
-
-// add the questions to the firebase database
-function addQuestionToDatabase(inputedQuestions, type) {
-    // TODO add the questions to the firebase database
-}
-//End of function addQuestionToDatabase
 
 // clear the textarea
 function clearTextArea() {

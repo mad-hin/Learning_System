@@ -187,3 +187,8 @@ function loadSubject() {
         }
     });
 }
+// add the questions to the firebase database
+export function addQuestionToDatabase(inputedQuestions, type) {
+    // TODO add the questions to the firebase database
+}
+//End of function addQuestionToDatabase
