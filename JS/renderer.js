@@ -189,6 +189,6 @@ function loadSubject() {
 }
 // add the questions to the firebase database
 export function addQuestionToDatabase(inputedQuestions, type) {
-    // TODO add the questions to the firebase database
+    console.log(inputedQuestions);
 }
 //End of function addQuestionToDatabase

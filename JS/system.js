@@ -307,9 +307,8 @@ function createQuestion(target, type) {
             clearTextArea();
             // write the object to the array
             nwqt[cnt] = inputItem;
-            cnt++;
-
-            if (cnt === target) {
+            ++cnt;
+            if (cnt == target) {
                 addQuestionToDatabase(nwqt, type);
             }
             // Make "Back" button clickable
