@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
     authDomain: "learning-system-2d77c.firebaseapp.com",
     databaseURL: "https://learning-system-2d77c.firebaseio.com",
@@ -27,7 +27,7 @@ let titleBar = new customTitlebar.Titlebar({
 titleBar.updateTitle('');*/
 
 // Initialize Firebase Database
-var db = firebase.database();
+let db = firebase.database();
 
 // Get Current HTML Page Name
 var fileName = location.pathname.split("/").slice(-1);
@@ -60,9 +60,6 @@ if (fileName[0] === "index.html") {
             document.location.href = 'system.html';
         }).catch(function (error) {
             if (error != null) {
-                // Get Error Code
-                var errorCode = error.code;
-
                 // Get Error Message
                 var errorMessage = error.message;
 
@@ -74,7 +71,7 @@ if (fileName[0] === "index.html") {
 
                 // Make The Error Message Be Visible
                 document.getElementById("login-error").style.visibility = "visible";
-                return;
+
             }
         });
     })
@@ -90,9 +87,6 @@ if (fileName[0] === "index.html") {
                 window.alert("Email has been sent to you.")
             }).catch(function (error) {
                 if (error != null) {
-                    // Get Error Code
-                    var errorCode = error.code;
-
                     // Get Error Message
                     var errorMessage = error.message;
 
@@ -104,7 +98,7 @@ if (fileName[0] === "index.html") {
 
                     // Make The Error Message Be Visible
                     document.getElementById("login-error").style.visibility = "visible";
-                    return;
+
                 }
             });
         }
@@ -155,8 +149,8 @@ function checkRole(userId) {
     db.ref('/users/' + userId + '/role').once('value').then(
         role => {
             if (role.val() !== "teacher") {
-                var teacherView = document.getElementsByClassName('teacherView');
-                for (var i = 0; i < teacherView.length; i++) {
+                let teacherView = document.getElementsByClassName('teacherView');
+                for (let i = 0; i < teacherView.length; i++) {
                     teacherView[i].style.display = 'none';
                 }
             }
@@ -181,7 +175,7 @@ function loadSubject() {
         let sub = result.val();
         for (const key of Object.keys(sub)) {
             const subjectName = sub[key];
-            var opt = document.createElement("OPTION");
+            const opt = document.createElement("OPTION");
             opt.appendChild(document.createTextNode(subjectName));
             document.getElementById("qtSubject").appendChild(opt);
         }
