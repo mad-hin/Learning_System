@@ -112,7 +112,7 @@ if (fileName[0] === "index.html") {
     // End of Forgot Password
 } else if (fileName[0] === "system.html") {
     firebase.auth().onAuthStateChanged(function (user) {
-        if(user){
+        if (user) {
             var userId = user.uid;
             getUserName(userId);
             checkRole(userId);
@@ -140,8 +140,8 @@ if (fileName[0] === "newqt.html") {
     loadSubject();
 }
 
-function getUserName(userId){
-    db.ref('/users/'+userId+'/name').once('value').then(
+function getUserName(userId) {
+    db.ref('/users/' + userId + '/name').once('value').then(
         name => {
             console.log(name.val());
             document.getElementById('welcomeMessage').style.visibility = "hidden";
@@ -187,8 +187,10 @@ function loadSubject() {
         }
     });
 }
+
 // add the questions to the firebase database
 export function addQuestionToDatabase(inputedQuestions, type) {
     console.log(inputedQuestions);
 }
+
 //End of function addQuestionToDatabase

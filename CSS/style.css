@@ -1,92 +1,92 @@
 body.login-body {
-	margin: 0;
-	height: 100%;
-	background: url(../img/book.jpg);
-	background-size: cover;
+    margin: 0;
+    height: 100%;
+    background: url(../img/book.jpg);
+    background-size: cover;
 }
 
 .login-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	width: 400px;
-	padding: 40px;
-	background-color: rgb(37, 46, 46);
-	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 400px;
+    padding: 40px;
+    background-color: rgb(37, 46, 46);
+    text-align: center;
 }
 
 .login-box h1 {
-	color: white;
-	font-size: 50px;
-	font-family: 'Lora', serif;
+    color: white;
+    font-size: 50px;
+    font-family: 'Lora', serif;
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
-	border: 0;
-	background: none;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid #00ffff;
-	padding: 14px 10px;
-	width: 300px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0.25s;
-	font-size: medium;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #00ffff;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    font-size: medium;
 }
 
 .login-box input[type="text"]:focus,
 .login-box input[type="password"]:focus {
-	width: 380px;
-	border-color: chartreuse;
+    width: 380px;
+    border-color: chartreuse;
 }
 
 .login-box button[type="button"] {
-	border: 0;
-	background: none;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid chartreuse;
-	padding: 14px 40px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0.25s;
-	cursor: pointer;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid chartreuse;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
 .login-box button[type="button"]:hover {
-	background: #2ecc71;
+    background: #2ecc71;
 }
 
 #fgtpwd {
-	color: white;
-	text-decoration: none !important;
+    color: white;
+    text-decoration: none !important;
 }
 
 .login-box p {
-	width: 100%;
-	text-align: center;
-	margin: 10px 0 20px;
-	color: red;
-	visibility: hidden;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 20px;
+    color: red;
+    visibility: hidden;
 }
 
 .login-box hr {
-	border-color: red;
-	visibility: hidden;
+    border-color: red;
+    visibility: hidden;
 }
 
 .firebaseui-tos,
 .firebaseui-tospp-full-message {
-	text-align: center;
-	line-height: normal;
-	margin: auto;
+    text-align: center;
+    line-height: normal;
+    margin: auto;
 }
 
 body.system-body {
@@ -95,30 +95,30 @@ body.system-body {
     height: auto;
     background: url(../img/systemBgd.jpg);
     background-size: 120%;
-	color: #f1f1f1;
-	font-family: 'Lora', serif;
+    color: #f1f1f1;
+    font-family: 'Lora', serif;
 }
 
 .sidebar {
-	height: 100%;
-	width: 50px;
-	position: fixed;
-	background-color: rgb(37, 46, 46);
-	top: 0;
-	left: 0;
-	z-index: 1;
-	transition: 0.5s;
-	overflow-x: hidden;
-	padding-top: 45px;
-	white-space: nowrap;
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    background-color: rgb(37, 46, 46);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 0.5s;
+    overflow-x: hidden;
+    padding-top: 45px;
+    white-space: nowrap;
 }
 
 .sidebar a {
-	padding: 3px 3px 3px 16px;
-	text-decoration: none;
-	font-size: 20px;
-	color: #818181;
-	display: block;
+    padding: 3px 3px 3px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
 }
 
 .sidebar a:hover {
@@ -128,54 +128,54 @@ body.system-body {
 }
 
 .sidebar hr {
-	margin: 0px;
+    margin: 0px;
 }
 
 main .sidebar {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 25px;
-	margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
 }
 
 .material-icons,
 .icon-text {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 .material-icons {
-	padding-bottom: 3px;
-	margin-right: 15px;
-	font-size: 22px;
+    padding-bottom: 3px;
+    margin-right: 15px;
+    font-size: 22px;
 }
 
 #main {
-	padding: 16px;
-	margin-left: 60px;
-	transition: margin-left 0.5s;
+    padding: 16px;
+    margin-left: 60px;
+    transition: margin-left 0.5s;
 }
 
-#home,#task,#practice,#logout,#setting{
+#home, #task, #practice, #logout, #setting {
     visibility: visible;
 }
 
-#welcomeMessage{
-	visibility: hidden;
-	text-align: center;
-	font-size: x-large;
+#welcomeMessage {
+    visibility: hidden;
+    text-align: center;
+    font-size: x-large;
 }
 
-.teacherView{
-	display: block;
+.teacherView {
+    display: block;
 }
 
-.teacherView a{
-	padding: 3px 3px 3px 16px;
-	text-decoration: none;
-	font-size: 20px;
-	color: #818181;
-	display: block;
+.teacherView a {
+    padding: 3px 3px 3px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
 }
 
 body.newstuacc-body {
@@ -184,122 +184,122 @@ body.newstuacc-body {
     height: auto;
     background: url(../img/student.jpg);
     background-size: 120%;
-	color: #f1f1f1;
-	font-family: 'Lora', serif;
+    color: #f1f1f1;
+    font-family: 'Lora', serif;
 }
 
 
 .signUp-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	width: 800px;
-	padding: 25px;
-	background: rgba(0,0,0,0.2);
-	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 800px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .signUp-box h3 {
-	color: white;
-	font-family: 'Lora', serif;
+    color: white;
+    font-family: 'Lora', serif;
 }
 
 .signUp-box input[type="text"],
 .signUp-box input[type="password"] {
-	border: none;
-	background-color: transparent;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid #ffffff;
-	padding: 14px 10px;
-	width: 400px;
-	outline: none;
-	color: white;
-	border-radius: 35px;
-	transition: 0.25s;
-	font-size: medium;
+    border: none;
+    background-color: transparent;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 10px;
+    width: 400px;
+    outline: none;
+    color: white;
+    border-radius: 35px;
+    transition: 0.25s;
+    font-size: medium;
 }
 
 .signUp-box input[type="text"]:focus,
 .signUp-box input[type="password"]:focus {
-	width: 480px;
-	border-color: chartreuse;
+    width: 480px;
+    border-color: chartreuse;
 }
 
 .signUp-box button[name="signUpBnt"] {
-	border: 0;
-	background: none;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid chartreuse;
-	padding: 14px 40px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0.25s;
-	cursor: pointer;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid chartreuse;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
 .signUp-box button[name="redoBnt"] {
-	border: 0;
-	background: none;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid red;
-	padding: 14px 40px;
-	outline: none;
-	color: white;
-	border-radius: 24px;
-	transition: 0.25s;
-	cursor: pointer;
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid red;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
-.signUp-box  button[name="redoBnt"]:hover{
-	background: rgb(179, 0, 0);
+.signUp-box button[name="redoBnt"]:hover {
+    background: rgb(179, 0, 0);
 }
 
-.signUp-box  button[name="signUpBnt"]:hover{
-	background: #2ecc71;
+.signUp-box button[name="signUpBnt"]:hover {
+    background: #2ecc71;
 }
 
-.signUp-box ::placeholder{
-	color: white;
+.signUp-box ::placeholder {
+    color: white;
 }
 
-#ans1, #ans2,#ans3,#ans4, #qtDes {
-	resize: none;
-	display: none;
+#ans1, #ans2, #ans3, #ans4, #qtDes {
+    resize: none;
+    display: none;
 }
 
-.qtForm{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	width: 800px;
-	padding: 25px;
-	background: rgba(0,0,0,0.2);
-	text-align: center;
+.qtForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 800px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .qtForm input[type="number"] {
-	border: none;
-	background-color: transparent;
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border: 2px solid #ffffff;
-	padding: 14px 10px;
-	width: 400px;
-	outline: none;
-	color: white;
-	border-radius: 35px;
-	transition: 0.25s;
-	font-size: medium;
+    border: none;
+    background-color: transparent;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 10px;
+    width: 400px;
+    outline: none;
+    color: white;
+    border-radius: 35px;
+    transition: 0.25s;
+    font-size: medium;
 }
 
-#nextBnt{
-	border: none;
+#nextBnt {
+    border: none;
 }

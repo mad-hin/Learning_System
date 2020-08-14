@@ -17,99 +17,99 @@
 </head>
 
 <body class="newstuacc-body">
-    <div id="mySidebar" class="sidebar" onmouseover="collaspeSidebar()" onmouseout="collaspeSidebar()">
-        <a href="#" id="home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></span></a><br>
-        <a href="#" id="task"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></span></a><br>
-        <a href="#" id="practise">
+<div id="mySidebar" class="sidebar" onmouseover="collaspeSidebar()" onmouseout="collaspeSidebar()">
+    <a href="#" id="home"><span><i class="material-icons">home</i><span class="icon-text">Home</span></span></a><br>
+    <a href="#" id="task"><span><i class="material-icons">menu</i><span class="icon-text">Task</span></span></a><br>
+    <a href="#" id="practise">
             <span>
                 <i class="material-icons">menu_book</i>
                 <span class="icon-text">Practise</span>
             </span>
-        </a>
-        <br>
-        <hr>
-        <br>
+    </a>
+    <br>
+    <hr>
+    <br>
 
-        <div class="teacherView">
-            <a href="#" id="newStuAcc">
+    <div class="teacherView">
+        <a href="#" id="newStuAcc">
                 <span>
                     <i class="material-icons">person_add</i>
                     <span class="icon-text">New Account</span>
                 </span>
-            </a>
-            <br>
-            <a href="#" id="newqt">
+        </a>
+        <br>
+        <a href="#" id="newqt">
                 <span><i class="material-icons">add</i>
                     <span class="icon-text">New Question</span>
                 </span>
-            </a>
-            <br>
-            <hr>
-            <br>
-        </div>
+        </a>
+        <br>
+        <hr>
+        <br>
+    </div>
 
-        <a href="#" id="systemLogout">
+    <a href="#" id="systemLogout">
             <span>
                 <i class="material-icons">exit_to_app</i>
                 <span class="icon-text">Logout</span>
             </span>
-        </a>
-        <br>
-        <a href="#" id="setting">
+    </a>
+    <br>
+    <a href="#" id="setting">
             <span>
                 <i class="material-icons">settings</i>
                 <span class="icon-text">Settings</span>
             </span>
-        </a>
-        <br>
-    </div>
+    </a>
+    <br>
+</div>
 
-    <div id="main">
-        <div class="qtForm">
-            <div class="qtTitle" style="text-align: center; color: black;">
-                <h1>Create New Questions</h1>
-            </div>
-            <div class="qt-box">
-                <form id="qt">
-                    <div class="firstStage">
-                        <h3 id="qtTypeLb">Question Type:</h3>
-                        <select id="qtType" onchange="showQusetionNumber()">
-                            <option>Task</option>
-                            <option>Practise</option>
-                        </select>
-                        <br>
-                        <h3 id="qtSubjectLb">Subject:</h3>
-                        <select id="qtSubject"></select>
-                        <h3 id="qtLevelLb">Level:</h3>
-                        <select id="qtLevel">
-                            <option>Form 1</option>
-                            <option>Form 2</option>
-                            <option>Form 3</option>
-                            <option>Form 4</option>
-                            <option>Form 5</option>
-                            <option>Form 6</option>
-                        </select>
-                        <br>
-                        <input type="number" name="qtNumber" id="qtNumber" min="1" max="100" value="1" required>
-                        <br>
-                        <button name="nextBnt" type="button" id="nextBnt">Next</button>
-                    </div>
-                    <textarea cols="100" rows="9" id="qtDes" placeholder="Question Description" required></textarea>
+<div id="main">
+    <div class="qtForm">
+        <div class="qtTitle" style="text-align: center; color: black;">
+            <h1>Create New Questions</h1>
+        </div>
+        <div class="qt-box">
+            <form id="qt">
+                <div class="firstStage">
+                    <h3 id="qtTypeLb">Question Type:</h3>
+                    <select id="qtType" onchange="showQusetionNumber()">
+                        <option>Task</option>
+                        <option>Practise</option>
+                    </select>
                     <br>
-                    <textarea cols="100" rows="9" id="ans1" placeholder="Please input answer 1" required></textarea>
+                    <h3 id="qtSubjectLb">Subject:</h3>
+                    <select id="qtSubject"></select>
+                    <h3 id="qtLevelLb">Level:</h3>
+                    <select id="qtLevel">
+                        <option>Form 1</option>
+                        <option>Form 2</option>
+                        <option>Form 3</option>
+                        <option>Form 4</option>
+                        <option>Form 5</option>
+                        <option>Form 6</option>
+                    </select>
                     <br>
-                    <textarea cols="100" rows="9" id="ans2" placeholder="Please input answer 2" required></textarea>
+                    <input type="number" name="qtNumber" id="qtNumber" min="1" max="100" value="1" required>
                     <br>
-                    <textarea cols="100" rows="9" id="ans3" placeholder="Please input answer 3" required></textarea>
-                    <br>
-                    <textarea cols="100" rows="9" id="ans4" placeholder="Please input answer 4" required></textarea>
-                    <br>
-                    <button name="goBackBnt" type="button" id="goBackBnt" style="display: none;" disabled>Back</button>
-                    <button name="nextqtBnt" type="button" id="nextqtBnt" style="display: none;">Next Question</button>
-                </form>
-            </div>
+                    <button name="nextBnt" type="button" id="nextBnt">Next</button>
+                </div>
+                <textarea cols="100" rows="9" id="qtDes" placeholder="Question Description" required></textarea>
+                <br>
+                <textarea cols="100" rows="9" id="ans1" placeholder="Please input answer 1" required></textarea>
+                <br>
+                <textarea cols="100" rows="9" id="ans2" placeholder="Please input answer 2" required></textarea>
+                <br>
+                <textarea cols="100" rows="9" id="ans3" placeholder="Please input answer 3" required></textarea>
+                <br>
+                <textarea cols="100" rows="9" id="ans4" placeholder="Please input answer 4" required></textarea>
+                <br>
+                <button name="goBackBnt" type="button" id="goBackBnt" style="display: none;" disabled>Back</button>
+                <button name="nextqtBnt" type="button" id="nextqtBnt" style="display: none;">Next Question</button>
+            </form>
         </div>
     </div>
+</div>
 </body>
 
 </html>

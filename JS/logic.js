@@ -13,4 +13,5 @@ function collaspeSidebar() {
         this.extented = false;
     }
 }
+
 // End of Function: collaspeSidebar()

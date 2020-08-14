@@ -1,4 +1,4 @@
-import { addQuestionToDatabase } from "./renderer.js";
+import {addQuestionToDatabase} from "./renderer.js";
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -106,6 +106,7 @@ function reform() {
         document.getElementById("nextBnt").style.display = "block";
     }*/
 }
+
 // End of function: reform
 
 // Check if all the items have been filled
@@ -125,8 +126,7 @@ function allFill(name, id, email, pwd, compwd) {
     if (id == "" && cnt === 0) {
         unFillPart += "1. Student ID\n";
         cnt++;
-    }
-    else if (id == "") {
+    } else if (id == "") {
         unFillPart += ++cnt + ". Student ID\n";
     }
 
@@ -162,6 +162,7 @@ function allFill(name, id, email, pwd, compwd) {
         return true;
     }
 }
+
 // End of function: allFill
 
 // Function to display all the unfilled part(s) (if there have any)
@@ -169,6 +170,7 @@ function unFillMessage(unFillPart) {
     console.log(unFillPart);
     alert("Error, Account cannot be created.\nThe following item(s) have not been filled:\n" + unFillPart);
 }
+
 // End of function: unFillMessage
 
 // Function to check if all the information are valid information
@@ -177,6 +179,7 @@ function allValid(name, id, email, pwd, compwd) {
         return true;
     }
 }
+
 // End of function: allValid
 
 // Function to check the password is same as the confirm password and is it greater than the min length
@@ -194,6 +197,7 @@ function pwdValid(pwd, compwd) {
 
     return true;
 }
+
 // End of function: pwdValid
 
 // Check if the password is greater than the min length
@@ -205,6 +209,7 @@ function pwdLenCheck(pwd) {
         return true;
     }
 }
+
 // End of function: pwdLenCheck
 
 
@@ -266,6 +271,7 @@ function showQusetionNumber() {
         document.getElementById("qtNumber").style.display = "none";
     }
 }
+
 // End of function showQusetionNumber
 
 // Choose the type of quiz the teacher want to set
@@ -345,6 +351,7 @@ function showQuestionInputBox() {
     document.getElementById("goBackBnt").style.display = "inline";
     nextAct.style.display = "inline";
 }
+
 // End of function showQuestionInputBox
 
 // clear the textarea
@@ -355,4 +362,5 @@ function clearTextArea() {
     document.getElementById("ans4").value = "";
     document.getElementById("ans3").value = "";
 }
+
 // End of function clearTextArea
