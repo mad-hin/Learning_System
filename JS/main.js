@@ -1,6 +1,5 @@
 const {app, BrowserWindow, Menu} = require('electron')
-const firebase = require('firebase')
-
+require('firebase');
 function createWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
@@ -28,9 +27,9 @@ function createWindow() {
     win.setMaximizable(false);
 
     //Customize Menubar
-    var menu = Menu.buildFromTemplate([
+    const menu = Menu.buildFromTemplate([
         // Empty Menu
-    ])
+    ]);
 
     // Set The Menu To Customize Menubar (Expected: Nothing)
     Menu.setApplicationMenu(menu);

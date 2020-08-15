@@ -1,6 +1,6 @@
 import {addQuestionToDatabase} from "./renderer.js";
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
     authDomain: "learning-system-2d77c.firebaseapp.com",
     databaseURL: "https://learning-system-2d77c.firebaseio.com",
@@ -11,8 +11,8 @@ var firebaseConfig = {
     measurementId: "G-0K6LJ79XVW"
 };
 
-var registerApp = firebase.initializeApp(firebaseConfig, "register");
-var registerdb = registerApp.database();
+let registerApp = firebase.initializeApp(firebaseConfig, "register");
+let registerdb = registerApp.database();
 
 // Get Current HTML Page Name
 var fileName = location.pathname.split("/").slice(-1);
@@ -20,7 +20,7 @@ console.log(fileName[0]);
 
 // Things to be load after the window loading
 window.onload = function () {
-    var bntHome = document.getElementById("home");
+    let bntHome = document.getElementById("home");
     // Action after clicking the "Home" anchor
     bntHome.onclick = function () {
         // Direct to "system.html"
@@ -30,7 +30,7 @@ window.onload = function () {
     }
     // End of Action after clicking the "New Account" anchor
 
-    var bntNewStuAcc = document.getElementById("newStuAcc");
+    let bntNewStuAcc = document.getElementById("newStuAcc");
     // Action after clicking the "New Account" anchor
     bntNewStuAcc.onclick = function () {
         // Direct to "newstuacc.html"
@@ -38,7 +38,7 @@ window.onload = function () {
     }
     // End of Action after clicking the "New Question" anchor
 
-    var bntNewQt = document.getElementById("newqt");
+    let bntNewQt = document.getElementById("newqt");
     // Action after clicking the "New Question" anchor
     bntNewQt.onclick = function () {
         // Direct to "newqt.html"
@@ -47,8 +47,8 @@ window.onload = function () {
     // End of Action after clicking the "New Question" anchor
 
     if (fileName[0] === "newstuacc.html") {
-        var reset = document.getElementById("redoBnt");
-        var create = document.getElementById("signUpBnt");
+        let reset = document.getElementById("redoBnt");
+        let create = document.getElementById("signUpBnt");
 
         reset.addEventListener('click', function () {
             // Confirm to erease all the input
@@ -65,7 +65,7 @@ window.onload = function () {
     if (fileName[0] === "newqt.html") {
         showQusetionNumber();
         clearTextArea();
-        var nextStep = document.getElementById("nextBnt");
+        let nextStep = document.getElementById("nextBnt");
 
         nextStep.addEventListener('click', function () {
             chooseType();
@@ -75,11 +75,11 @@ window.onload = function () {
 }
 
 function createAcc() {
-    var stuName = document.getElementById("stuName").value;
-    var stuId = document.getElementById("stuId").value;
-    var stuEmail = document.getElementById("stuEmail").value;
-    var stuPwd = document.getElementById("stuPwd").value;
-    var stuComPwd = document.getElementById("stuComPwd").value;
+    let stuName = document.getElementById("stuName").value;
+    let stuId = document.getElementById("stuId").value;
+    let stuEmail = document.getElementById("stuEmail").value;
+    let stuPwd = document.getElementById("stuPwd").value;
+    let stuComPwd = document.getElementById("stuComPwd").value;
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
         console.log("All items filled");
         if (allValid(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
@@ -191,11 +191,9 @@ function pwdValid(pwd, compwd) {
     }
 
     // Check if the password is greater than the min length
-    if (!pwdLenCheck(pwd)) {
-        return false;
-    }
+    return pwdLenCheck(pwd);
 
-    return true;
+
 }
 
 // End of function: pwdValid
@@ -228,7 +226,7 @@ function nameValid(name) {
         return true;
     } else {
         console.log("Name not ok\n")//For Debug
-        alert("Error, invalid formate.\nPlease either fill in Chinese Name or English Name\n");
+        alert("Error, invalid format.\nPlease either fill in Chinese Name or English Name\n");
         return false;
     }
 }
@@ -237,7 +235,7 @@ function idValid(id) {
     if (/^[a-zA-Z][a-zA-Z0-9]+$/.test(id)) {
         return true;
     } else {
-        alert("Error, invalid formate.\nPlease fill in Student ID with English Character(s) plus Numbers.\nE.g.s114514\n");
+        alert("Error, invalid format.\nPlease fill in Student ID with English Character(s) plus Numbers.\nE.g.s114514\n");
     }
 }
 
@@ -336,7 +334,7 @@ function createQuestion(target, type) {
     })
 }
 
-// show the textare for input question
+// show the textarea for input question
 function showQuestionInputBox() {
     var nextAct = document.getElementById("nextqtBnt");
     var f = document.getElementsByClassName("firstStage")

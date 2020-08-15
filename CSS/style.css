@@ -23,8 +23,8 @@ body.login-body {
 }
 
 .login-box input[type="text"],
-.login-box input[type="password"] {
-    border: 0;
+.login-box input[type="password"],
+.qtForm input[type="number"] {
     background: none;
     display: block;
     margin: 20px auto;
@@ -46,7 +46,6 @@ body.login-body {
 }
 
 .login-box button[type="button"] {
-    border: 0;
     background: none;
     display: block;
     margin: 20px auto;
@@ -128,7 +127,7 @@ body.system-body {
 }
 
 .sidebar hr {
-    margin: 0px;
+    margin: 0;
 }
 
 main .sidebar {
@@ -207,7 +206,6 @@ body.newstuacc-body {
 
 .signUp-box input[type="text"],
 .signUp-box input[type="password"] {
-    border: none;
     background-color: transparent;
     display: block;
     margin: 20px auto;
@@ -229,7 +227,6 @@ body.newstuacc-body {
 }
 
 .signUp-box button[name="signUpBnt"] {
-    border: 0;
     background: none;
     margin: 20px auto;
     text-align: center;
@@ -243,7 +240,6 @@ body.newstuacc-body {
 }
 
 .signUp-box button[name="redoBnt"] {
-    border: 0;
     background: none;
     margin: 20px auto;
     text-align: center;
@@ -282,22 +278,6 @@ body.newstuacc-body {
     padding: 25px;
     background: rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-.qtForm input[type="number"] {
-    border: none;
-    background-color: transparent;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #ffffff;
-    padding: 14px 10px;
-    width: 400px;
-    outline: none;
-    color: white;
-    border-radius: 35px;
-    transition: 0.25s;
-    font-size: medium;
 }
 
 #nextBnt {
