@@ -1,4 +1,5 @@
 import {addQuestionToDatabase} from "./renderer.js";
+import {genQuestionID} from "./renderer.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -274,9 +275,10 @@ function showQusetionNumber() {
 
 // Choose the type of quiz the teacher want to set
 function chooseType() {
-    var v = document.getElementById("qtType");
-    var qtNum = document.getElementById("qtNumber");
-    var num, type;
+    const v = document.getElementById("qtType");
+    const qtNum = document.getElementById("qtNumber");
+    const qtSubject = document.getElementById("qtSubject");
+    let num, type, subject;
     if (v.selectedIndex == 0) {
         num = qtNum.value;
         type = "task";
@@ -284,11 +286,14 @@ function chooseType() {
         num = 1;
         type = "practise";
     }
+    subject = qtSubject.options[qtSubject.selectedIndex].text;
+    let questionID = genQuestionID(subject, type);
     showQuestionInputBox();
-    createQuestion(num, type);
+    console.log(questionID);
+    createQuestion(num, type, subject, questionID);
 }
 
-function createQuestion(target, type) {
+function createQuestion(target, type, subject, questionID) {
     var nextAct = document.getElementById("nextqtBnt");
     var backAct = document.getElementById("goBackBnt");
     var cnt = 0;
@@ -302,7 +307,7 @@ function createQuestion(target, type) {
         if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "" && qtDes !== "") {
             // write values to object "inputItem"
             inputItem = {
-                id: cnt,
+                id: subject.toString().toUpperCase() + cnt.toString(),
                 a1: ans1,
                 a2: ans2,
                 a3: ans3,
@@ -313,7 +318,7 @@ function createQuestion(target, type) {
             nwqt[cnt] = inputItem;
             ++cnt;
             if (cnt == target) {
-                addQuestionToDatabase(nwqt, type);
+                addQuestionToDatabase(nwqt, type, subject, questionID);
             }
             // Make "Back" button clickable
             document.getElementById("goBackBnt").disabled = false;
