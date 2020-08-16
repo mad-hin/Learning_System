@@ -183,15 +183,9 @@ function loadSubject() {
 }
 
 // add the questions to the firebase database
-export function addQuestionToDatabase(inputedQuestions, type, subject, questionID) {
+// export the function is because I call this function in another js file
+export async function addQuestionToDatabase(inputedQuestions, type, subject) {
     db.ref("/" + type + "/" + subject + "/" + questionID).push(inputedQuestions);
 }
 
 //End of function addQuestionToDatabase
-
-// generate question ID
-export function genQuestionID(subject, type) {
-    db.ref("/" + type + "/" + subject).on('value', v => {
-        return subject.toString().toUpperCase() + (v.numChildren() + 1).toString();
-    })
-}

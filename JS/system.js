@@ -1,5 +1,4 @@
 import {addQuestionToDatabase} from "./renderer.js";
-import {genQuestionID} from "./renderer.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -116,42 +115,42 @@ function allFill(name, id, email, pwd, compwd) {
     var cnt = 0;
 
     // Check if student name have been filled or not
-    if (name == "" && cnt === 0) {
+    if (name === "" && cnt === 0) {
         unFillPart += "1. Student Name\n";
         cnt++;
-    } else if (name == "") {
+    } else if (name === "") {
         unFillPart += ++cnt + ". Student Name\n";
     }
 
     // Check if student ID have been filled or not
-    if (id == "" && cnt === 0) {
+    if (id === "" && cnt === 0) {
         unFillPart += "1. Student ID\n";
         cnt++;
-    } else if (id == "") {
+    } else if (id === "") {
         unFillPart += ++cnt + ". Student ID\n";
     }
 
     // Check if student Emsil have been filled or not
-    if (email == "" && cnt === 0) {
+    if (email === "" && cnt === 0) {
         unFillPart += "1. Student Email\n";
         cnt++;
-    } else if (email == "") {
+    } else if (email === "") {
         unFillPart += ++cnt + ". Student Email\n";
     }
 
     // Check if password have been filled or not
-    if (pwd == "" && cnt === 0) {
+    if (pwd === "" && cnt === 0) {
         unFillPart += "1. Password\n";
         cnt++;
-    } else if (pwd == "") {
+    } else if (pwd === "") {
         unFillPart += ++cnt + ". Password\n";
     }
 
     // Check if confirm password have been filled or not
-    if (compwd == "" && cnt === 0) {
+    if (compwd === "" && cnt === 0) {
         unFillPart += "1. Confirm Password\n";
         cnt++;
-    } else if (compwd == "") {
+    } else if (compwd === "") {
         unFillPart += ++cnt + ". Confirm Password\n";
     }
 
@@ -213,7 +212,7 @@ function pwdLenCheck(pwd) {
 
 
 function emailValid(mail) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
         return true;
     } else {
         alert("Error, It is an invalid email address.\nPlease fill in a valid email address\n");
@@ -252,23 +251,13 @@ function register(name, id, email, pwd) {
                     role: "student",
                     uid: user.uid,
                     id: id
-                });
-                alert("Account of ID:" + id + " Name: " + name + " created successfully\n");
+                }).then(r =>
+                    alert("Account of ID:" + id + " Name: " + name + " created successfully\n")
+                );
             }
         })
     });
-    registerApp.auth().signOut();
-}
-
-// show the number of questions that the teacher want to make 
-function showQusetionNumber() {
-    var v = document.getElementById("qtType");
-    console.log(v.selectedIndex);
-    if (v.selectedIndex == 0) {
-        document.getElementById("qtNumber").style.display = "block";
-    } else {
-        document.getElementById("qtNumber").style.display = "none";
-    }
+    registerApp.auth().signOut().then(r => console.log("new account sign outed"));
 }
 
 // End of function showQusetionNumber
@@ -279,7 +268,7 @@ function chooseType() {
     const qtNum = document.getElementById("qtNumber");
     const qtSubject = document.getElementById("qtSubject");
     let num, type, subject;
-    if (v.selectedIndex == 0) {
+    if (v.selectedIndex === 0) {
         num = qtNum.value;
         type = "task";
     } else {
@@ -287,13 +276,11 @@ function chooseType() {
         type = "practise";
     }
     subject = qtSubject.options[qtSubject.selectedIndex].text;
-    let questionID = genQuestionID(subject, type);
     showQuestionInputBox();
-    console.log(questionID);
-    createQuestion(num, type, subject, questionID);
+    createQuestion(num, type, subject);
 }
 
-function createQuestion(target, type, subject, questionID) {
+function createQuestion(target, type, subject) {
     var nextAct = document.getElementById("nextqtBnt");
     var backAct = document.getElementById("goBackBnt");
     var cnt = 0;
@@ -303,11 +290,13 @@ function createQuestion(target, type, subject, questionID) {
         var ans2 = document.getElementById("ans2").value;
         var ans3 = document.getElementById("ans3").value;
         var ans4 = document.getElementById("ans4").value;
+        var qtDes = document.getElementById("qtDes").value;
         // Make sure all items have been inputed before going to next question
         if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "" && qtDes !== "") {
             // write values to object "inputItem"
             inputItem = {
                 id: subject.toString().toUpperCase() + cnt.toString(),
+                qt: qtDes,
                 a1: ans1,
                 a2: ans2,
                 a3: ans3,
@@ -318,7 +307,7 @@ function createQuestion(target, type, subject, questionID) {
             nwqt[cnt] = inputItem;
             ++cnt;
             if (cnt == target) {
-                addQuestionToDatabase(nwqt, type, subject, questionID);
+                addQuestionToDatabase(nwqt, type, subject);
             }
             // Make "Back" button clickable
             document.getElementById("goBackBnt").disabled = false;
