@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="937b0dd0-c924-4166-ad82-71ebaa7c8c1d" name="Default Changelist" comment="whatever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/logic.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/logic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/newqt.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/newqt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/renderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/system.js" afterDir="false" />
     </list>
@@ -42,9 +43,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/sfxcmc.github.io" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="main.js" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron.cmd" nameIsGenerated="true" path-to-js-file="JS/main.js" working-dir="$PROJECT_DIR$">
@@ -84,7 +85,10 @@
       <workItem from="1597486757539" duration="202000" />
       <workItem from="1597486990683" duration="634000" />
       <workItem from="1597495574996" duration="5159000" />
-      <workItem from="1597556393845" duration="7110000" />
+      <workItem from="1597556393845" duration="7135000" />
+      <workItem from="1597565093468" duration="1122000" />
+      <workItem from="1597630891932" duration="913000" />
+      <workItem from="1597661936533" duration="6029000" />
     </task>
     <task id="LOCAL-00001" summary="whatever">
       <created>1597410207828</created>
@@ -114,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597501350790</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="whatever">
+      <created>1597564808682</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597564808682</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,26 +156,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597459607368" />
-    <state x="813" y="294" key="FileChooserDialogImpl" timestamp="1597486152257">
+    <state x="813" y="294" key="FileChooserDialogImpl" timestamp="1597630912321">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="813" y="294" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597486152257" />
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1597563944027">
+    <state x="813" y="294" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597630912321" />
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1597671334417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597563944027" />
-    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1597563944027">
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
+    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1597671334417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597563944027" />
-    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1597563944027">
+    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
+    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1597671334417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597563944027" />
-    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1597563944027">
+    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1597671334417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597563944027" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
     <state width="1899" height="343" key="GridCell.Tab.1.bottom" timestamp="1597501453130">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -213,14 +224,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="343" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597501453131" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1597558509195">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1597667421724">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597558509195" />
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597501353901">
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597667421724" />
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597564811865">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597501353901" />
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597564811865" />
     <state x="610" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597560973827">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -229,9 +240,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="336" y="165" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1595237028061" />
-    <state x="726" y="398" width="624" height="284" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1597413894733">
+    <state x="726" y="398" width="624" height="285" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1597667420834">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="726" y="398" width="624" height="284" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597413894733" />
+    <state x="726" y="398" width="624" height="285" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597667420834" />
   </component>
 </project>

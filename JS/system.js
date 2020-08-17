@@ -1,4 +1,4 @@
-import {addQuestionToDatabase} from "./renderer.js";
+import {addQuestionToDatabase, genQuestionID} from "./renderer.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -267,7 +267,8 @@ function chooseType() {
     const v = document.getElementById("qtType");
     const qtNum = document.getElementById("qtNumber");
     const qtSubject = document.getElementById("qtSubject");
-    let num, type, subject;
+    const qtlevel = document.getElementById("qtLevel");
+    let num, type, subject, level;
     if (v.selectedIndex === 0) {
         num = qtNum.value;
         type = "task";
@@ -275,24 +276,43 @@ function chooseType() {
         num = 1;
         type = "practise";
     }
+    level = qtlevel.options[qtlevel.selectedIndex].text
+    level = level.toString().replace(" ", "_");
     subject = qtSubject.options[qtSubject.selectedIndex].text;
+    genQuestionID(type, subject,level);
     showQuestionInputBox();
-    createQuestion(num, type, subject);
+    createQuestion(num, type, subject, level);
 }
 
-function createQuestion(target, type, subject) {
-    var nextAct = document.getElementById("nextqtBnt");
-    var backAct = document.getElementById("goBackBnt");
-    var cnt = 0;
-    var nwqt = [], inputItem = {}, correctAns;
+function createQuestion(target, type, subject, level) {
+    let nextAct = document.getElementById("nextqtBnt");
+    let backAct = document.getElementById("goBackBnt");
+    let cnt = 0;
+    var nwqt = [], inputItem = {}, correctAns = [];
     nextAct.addEventListener('click', function () {
-        var ans1 = document.getElementById("ans1").value;
-        var ans2 = document.getElementById("ans2").value;
-        var ans3 = document.getElementById("ans3").value;
-        var ans4 = document.getElementById("ans4").value;
-        var qtDes = document.getElementById("qtDes").value;
+        let ans1 = document.getElementById("ans1").value;
+        let ans2 = document.getElementById("ans2").value;
+        let ans3 = document.getElementById("ans3").value;
+        let ans4 = document.getElementById("ans4").value;
+        let qtDes = document.getElementById("qtDes").value;
+        let ans1Radio = document.getElementById("ans1Radio");
+        let ans2Radio = document.getElementById("ans2Radio");
+        let ans3Radio = document.getElementById("ans3Radio");
+        let ans4Radio = document.getElementById("ans4Radio");
+
         // Make sure all items have been inputed before going to next question
-        if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "" && qtDes !== "") {
+        if (ans1 !== "" && ans2 !== "" && ans3 !== "" && ans4 !== "" && qtDes !== "" && (ans1Radio.checked || ans2Radio.checked || ans3Radio.checked || ans4Radio.checked)) {
+            let correctOption;
+            if (ans1Radio.checked) {
+                correctOption = "a" + ans1Radio.value.toString();
+            } else if (ans2Radio.checked) {
+                correctOption = "a" + ans2Radio.value.toString();
+            } else if (ans3Radio.checked) {
+                correctOption = "a" + ans3Radio.value.toString();
+            } else {
+                correctOption = "a" + ans4Radio.value.toString();
+            }
+            console.log(correctOption)
             // write values to object "inputItem"
             inputItem = {
                 id: subject.toString().toUpperCase() + cnt.toString(),
@@ -300,14 +320,17 @@ function createQuestion(target, type, subject) {
                 a1: ans1,
                 a2: ans2,
                 a3: ans3,
-                a4: ans4
+                a4: ans4,
+                correct: correctOption
             };
             clearTextArea();
             // write the object to the array
             nwqt[cnt] = inputItem;
+            correctAns[cnt] = correctOption
             ++cnt;
             if (cnt == target) {
-                addQuestionToDatabase(nwqt, type, subject);
+                let questionID = document.getElementById("qtID").textContent
+                addQuestionToDatabase(nwqt, correctAns, type, subject, level, questionID);
             }
             // Make "Back" button clickable
             document.getElementById("goBackBnt").disabled = false;
@@ -335,12 +358,16 @@ function showQuestionInputBox() {
     for (var i = 0; i < f.length; i++) {
         f[i].style.display = 'none';
     }
-    document.getElementById("qtDes").style.display = "block";
-    document.getElementById("ans1").style.display = "block";
-    document.getElementById("ans2").style.display = "block";
-    document.getElementById("ans3").style.display = "block";
-    document.getElementById("ans4").style.display = "block";
+    document.getElementById("qtDes").style.display = "inline-block";
+    document.getElementById("ans1").style.display = "inline-block";
+    document.getElementById("ans2").style.display = "inline-block";
+    document.getElementById("ans3").style.display = "inline-block";
+    document.getElementById("ans4").style.display = "inline-block";
     document.getElementById("goBackBnt").style.display = "inline";
+    document.getElementById("ans1Radio").style.display = "inline-block"
+    document.getElementById("ans2Radio").style.display = "inline-block"
+    document.getElementById("ans3Radio").style.display = "inline-block"
+    document.getElementById("ans4Radio").style.display = "inline-block"
     nextAct.style.display = "inline";
 }
 
@@ -353,6 +380,10 @@ function clearTextArea() {
     document.getElementById("ans2").value = "";
     document.getElementById("ans4").value = "";
     document.getElementById("ans3").value = "";
+    document.getElementById("ans1Radio").checked = false;
+    document.getElementById("ans2Radio").checked = false;
+    document.getElementById("ans3Radio").checked = false;
+    document.getElementById("ans4Radio").checked = false;
 }
 
 // End of function clearTextArea

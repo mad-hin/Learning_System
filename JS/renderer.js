@@ -184,8 +184,19 @@ function loadSubject() {
 
 // add the questions to the firebase database
 // export the function is because I call this function in another js file
-export async function addQuestionToDatabase(inputedQuestions, type, subject) {
-    db.ref("/" + type + "/" + subject + "/" + questionID).push(inputedQuestions);
+export function addQuestionToDatabase(inputedQuestions, correctAns, type, subject, level, questionID) {
+    db.ref("/" + type + "/" + level + "/" + subject + "/" + questionID).set({
+        question: inputedQuestions,
+        answer: correctAns
+    }).then(r => {
+        document.location.href = 'newqt.html';
+    });
 }
 
 //End of function addQuestionToDatabase
+
+export function genQuestionID(type, subject, level) {
+    db.ref("/" + type + "/" + level + "/" + subject ).on('value', r => {
+        document.getElementById("qtID").textContent = subject.toString().toUpperCase() + "_" + (r.numChildren() + 1);
+    })
+}

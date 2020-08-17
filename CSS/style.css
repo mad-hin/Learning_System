@@ -283,3 +283,7 @@ body.newstuacc-body {
 #nextBnt {
     border: none;
 }
+
+input[type="radio"]{
+    display: none;
+}
