@@ -20,26 +20,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937b0dd0-c924-4166-ad82-71ebaa7c8c1d" name="Default Changelist" comment="whatever">
+      <change afterPath="$PROJECT_DIR$/img/practise.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/task.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/newqt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/newstuacc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/practise.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/system.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTML/task.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JS/logic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JS/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JS/renderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JS/system.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/newqt.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/newqt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/system.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/newqt.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/newstuacc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/setting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/system.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/logic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/renderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/system.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1evfWghJT75v8CkzcF6S70A2gRh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -47,7 +81,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.test">
     <configuration name="main.js" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron.cmd" nameIsGenerated="true" path-to-js-file="JS/main.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -58,10 +92,26 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.main.js" />
       <item itemvalue="npm.start" />
+      <item itemvalue="npm.test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -88,7 +138,8 @@
       <workItem from="1597556393845" duration="7135000" />
       <workItem from="1597565093468" duration="1122000" />
       <workItem from="1597630891932" duration="913000" />
-      <workItem from="1597661936533" duration="6029000" />
+      <workItem from="1597661936533" duration="7584000" />
+      <workItem from="1597713370486" duration="4370000" />
     </task>
     <task id="LOCAL-00001" summary="whatever">
       <created>1597410207828</created>
@@ -125,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597564808682</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="whatever">
+      <created>1597671582725</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597671582725</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +202,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="whatever" />
     <option name="LAST_COMMIT_MESSAGE" value="whatever" />
   </component>
@@ -156,26 +215,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597459607368" />
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1597717075290">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597717075290" />
     <state x="813" y="294" key="FileChooserDialogImpl" timestamp="1597630912321">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="813" y="294" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597630912321" />
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1597671334417">
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1597717806813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
-    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1597671334417">
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597717806813" />
+    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1597717806813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
-    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1597671334417">
+    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597717806813" />
+    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1597717806813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
-    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1597671334417">
+    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597717806813" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1597717806813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597671334417" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597717806813" />
     <state width="1899" height="343" key="GridCell.Tab.1.bottom" timestamp="1597501453130">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -228,10 +291,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597667421724" />
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597564811865">
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597671586057">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597564811865" />
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597671586057" />
     <state x="610" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597560973827">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

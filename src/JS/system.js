@@ -46,6 +46,22 @@ window.onload = function () {
     }
     // End of Action after clicking the "New Question" anchor
 
+    let bntTask = document.getElementById("task");
+    // Action after clicking the "Task" anchor
+    bntTask.onclick = function () {
+        // Direct to "task.html"
+        document.location.href = 'task.html';
+    }
+    // End of Action after clicking the "Task" anchor
+
+    let bntPractise = document.getElementById("practise");
+    // Action after clicking the "Practise" anchor
+    bntPractise.onclick = function () {
+        // Direct to "task.html"
+        document.location.href = 'practise.html';
+    }
+    // End of Action after clicking the "Practise" anchor
+
     if (fileName[0] === "newstuacc.html") {
         let reset = document.getElementById("redoBnt");
         let create = document.getElementById("signUpBnt");

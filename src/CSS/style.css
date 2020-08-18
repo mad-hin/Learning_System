@@ -1,7 +1,7 @@
 body.login-body {
     margin: 0;
     height: 100%;
-    background: url(../img/book.jpg);
+    background: url(../../img/book.jpg);
     background-size: cover;
 }
 
@@ -92,7 +92,7 @@ body.system-body {
     max-width: 100%;
     width: auto;
     height: auto;
-    background: url(../img/systemBgd.jpg);
+    background: url(../../img/systemBgd.jpg);
     background-size: 120%;
     color: #f1f1f1;
     font-family: 'Lora', serif;
@@ -181,7 +181,7 @@ body.newstuacc-body {
     max-width: 100%;
     width: auto;
     height: auto;
-    background: url(../img/student.jpg);
+    background: url(../../img/student.jpg);
     background-size: 120%;
     color: #f1f1f1;
     font-family: 'Lora', serif;
@@ -284,6 +284,31 @@ body.newstuacc-body {
     border: none;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     display: none;
+}
+
+textarea {
+    font-family: 'Lora', serif;
+    /*font-size: 12px;*/
+}
+
+body.task_body {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    background: url(../../img/task.jpg);
+    background-size: 120%;
+    color: #f1f1f1;
+    font-family: 'Lora', serif;
+}
+
+body.practise_body {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    background: url(../../img/practise.jpg);
+    background-size: 120%;
+    color: #f1f1f1;
+    font-family: 'Lora', serif;
 }
