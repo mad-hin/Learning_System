@@ -183,7 +183,7 @@ function loadSubject() {
 }
 
 // add the questions to the firebase database
-// export the function is because I call this function in another js file
+// export the function is because I call this function in "system.js" file
 export function addQuestionToDatabase(inputedQuestions, correctAns, type, subject, level, questionID) {
     db.ref("/" + type + "/" + level + "/" + subject + "/" + questionID).set({
         question: inputedQuestions,
@@ -195,8 +195,22 @@ export function addQuestionToDatabase(inputedQuestions, correctAns, type, subjec
 
 //End of function addQuestionToDatabase
 
+/*
+generate a question for the question
+if the question is for task, the ID will start with "T_" (i.e. T_ENGLISH_1)
+else the ID will start with "P_" (i.e. P_MATH_1)
+export the function is because I call this function in "system.js" file
+*/
 export function genQuestionID(type, subject, level) {
-    db.ref("/" + type + "/" + level + "/" + subject ).on('value', r => {
-        document.getElementById("qtID").textContent = subject.toString().toUpperCase() + "_" + (r.numChildren() + 1);
+    let idType;
+    if (type === "task") {
+        idType = "T_";
+    } else {
+        idType = "P_";
+    }
+    db.ref("/" + type + "/" + level + "/" + subject).on('value', r => {
+        document.getElementById("qtID").textContent = idType + subject.toString().toUpperCase() + "_" + (r.numChildren() + 1);
     })
 }
+
+// End of function genQuestionID

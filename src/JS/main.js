@@ -35,7 +35,7 @@ function createWindow() {
     Menu.setApplicationMenu(menu);
 
     // and load the index.html of the app.
-    win.loadFile('./HTML/index.html')
+    win.loadFile('./src/HTML/index.html')
 
     // Open the DevTools.
     win.webContents.openDevTools()

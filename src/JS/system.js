@@ -110,17 +110,7 @@ function createAcc() {
 function reform() {
     if (fileName[0] === "newstuacc.html") {
         document.getElementById("signUp").reset();
-    } /*else if (fileName[0] === "newqt.html") {
-        console.log("reformed");
-        var v = document.getElementById("qtType");
-        var qtNum = document.getElementById("qtNumber");
-        var nextAct = document.getElementById("nextqtBnt");
-        v.style.display = "block";
-        qtNum.style.display = "block";
-        nextAct.innerHTML = "Next Question";
-        nextAct.style.display = "none";
-        document.getElementById("nextBnt").style.display = "block";
-    }*/
+    }
 }
 
 // End of function: reform
@@ -295,7 +285,7 @@ function chooseType() {
     level = qtlevel.options[qtlevel.selectedIndex].text
     level = level.toString().replace(" ", "_");
     subject = qtSubject.options[qtSubject.selectedIndex].text;
-    genQuestionID(type, subject,level);
+    genQuestionID(type, subject, level);
     showQuestionInputBox();
     createQuestion(num, type, subject, level);
 }
