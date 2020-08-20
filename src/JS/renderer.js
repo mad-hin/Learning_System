@@ -47,34 +47,10 @@ if (fileName[0] === "index.html") {
 
     // Sign in 
     signIn.addEventListener('click', function () {
-        var email = document.getElementById("email").value;
-        var pwd = document.getElementById("pwd").value;
-
-        firebase.auth().signInWithEmailAndPassword(email, pwd).then(function () {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    var userId = user.uid;
-                    passwordUpdate(userId, pwd)
-                }
-            });
-            document.location.href = 'system.html';
-        }).catch(function (error) {
-            if (error != null) {
-                // Get Error Message
-                var errorMessage = error.message;
-
-                // Make The Horizontal Rule Be Visible
-                document.getElementById("login-hr").style.visibility = "visible";
-
-                // Load Error Message 
-                document.getElementById("login-error").innerHTML = errorMessage;
-
-                // Make The Error Message Be Visible
-                document.getElementById("login-error").style.visibility = "visible";
-
-            }
-        });
-    })
+        let email = document.getElementById("email").value;
+        let pwd = document.getElementById("pwd").value;
+        signInFunction(email, pwd);
+    });
     // End of Sign in
 
     // Forgot Password
@@ -107,9 +83,8 @@ if (fileName[0] === "index.html") {
 } else if (fileName[0] === "system.html") {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            var userId = user.uid;
-            getUserName(userId);
-            checkRole(userId);
+            let uid = user.uid;
+            getUserName(uid);
         }
     });
 }
@@ -130,23 +105,51 @@ if (fileName[0] !== "index.html") {
     }
     // End of Action after clicking the "Logout" anchor
 }
-if (fileName[0] === "newqt.html") {
-    loadSubject();
+
+function signInFunction(email, pwd) {
+    firebase.auth().signInWithEmailAndPassword(email, pwd).then(function () {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                db.ref('users/' + user.uid + '/name').once('value').then(
+                    name => {
+                        passwordUpdate(name.val(), pwd)
+                    }
+                )
+            }
+        });
+        document.location.href = 'system.html';
+    }).catch(function (error) {
+        if (error != null) {
+            // Get Error Message
+            let errorMessage = error.message;
+
+            // Make The Horizontal Rule Be Visible
+            document.getElementById("login-hr").style.visibility = "visible";
+
+            // Load Error Message
+            document.getElementById("login-error").innerHTML = errorMessage;
+
+            // Make The Error Message Be Visible
+            document.getElementById("login-error").style.visibility = "visible";
+
+        }
+    })
 }
 
-function getUserName(userId) {
-    db.ref('/users/' + userId + '/name').once('value').then(
+function getUserName(uid) {
+    db.ref('users/' + uid + '/name').once('value').then(
         name => {
-            console.log(name.val());
             document.getElementById('welcomeMessage').style.visibility = "hidden";
             document.getElementById('welcomeMessage').innerHTML = "Welcome " + name.val();
             document.getElementById('welcomeMessage').style.visibility = "visible";
+            checkRole(name.val())
         }
     )
 }
 
-function checkRole(userId) {
-    db.ref('/users/' + userId + '/role').once('value').then(
+function checkRole(username) {
+    console.log(username)
+    db.ref('/users/' + username + '/role').once('value').then(
         role => {
             if (role.val() !== "teacher") {
                 let teacherView = document.getElementsByClassName('teacherView');
@@ -158,19 +161,23 @@ function checkRole(userId) {
     )
 }
 
-function passwordUpdate(userId, currPassword) {
+function passwordUpdate(username, currPassword) {
     var updates = {};
-    db.ref('/users/' + userId + '/password').once('value').then(
+    db.ref('/users/' + username + '/password').once('value').then(
         pd => {
-            if (pd.val !== currPassword) {
-                updates['/users/' + userId + '/password'] = currPassword
+            if (pd.val === currPassword) {
+                return;
             }
+            updates['/users/' + username + '/password'] = currPassword
+            firebase.database().ref().update(updates).then(() => {
+                console.log("update success")
+            });
         }
     )
 }
 
 // Load the subject name to "qtTopic"
-function loadSubject() {
+export function loadSubject() {
     db.ref("/subject/").once("value").then(result => {
         let sub = result.val();
         for (const key of Object.keys(sub)) {

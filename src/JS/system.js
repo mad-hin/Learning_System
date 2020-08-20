@@ -1,4 +1,4 @@
-import {addQuestionToDatabase, genQuestionID} from "./renderer.js";
+import {addQuestionToDatabase, genQuestionID, loadSubject} from "./renderer.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBlkV6uH6Xum1XemTSXu8iX4IHJyFwBygE",
@@ -79,7 +79,8 @@ window.onload = function () {
     }
 
     if (fileName[0] === "newqt.html") {
-        showQusetionNumber();
+        loadSubject()
+        showQuestionNumber();
         clearTextArea();
         let nextStep = document.getElementById("nextBnt");
 
@@ -87,6 +88,10 @@ window.onload = function () {
             chooseType();
         })
 
+    }
+
+    if (fileName[0] === "practise.html") {
+        loadSubject()
     }
 }
 
@@ -246,11 +251,12 @@ function idValid(id) {
 }
 
 function register(name, id, email, pwd) {
+    let stuID = email.substring(0, email.lastIndexOf("@"));
     registerApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
         registerApp.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log("Account created uid:" + user.uid);
-                registerdb.ref('/users/' + user.uid + '/').set({
+                registerdb.ref('/users/' + stuID + '/').set({
                     email: email,
                     name: name,
                     password: pwd,
@@ -266,7 +272,6 @@ function register(name, id, email, pwd) {
     registerApp.auth().signOut().then(r => console.log("new account sign outed"));
 }
 
-// End of function showQusetionNumber
 
 // Choose the type of quiz the teacher want to set
 function chooseType() {

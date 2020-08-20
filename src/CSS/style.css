@@ -338,3 +338,34 @@ body.practise_body {
     color: #f1f1f1;
     font-family: 'Lora', serif;
 }
+
+.practiseForm {
+    text-align: center;
+    color: black;
+}
+
+table {
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    color: white;
+    border: 1px solid white;
+    text-align: left;
+    padding: 8px;
+}
+
+table select {
+    background: none;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-family: 'Lora', serif;
+}
+
+table option {
+    background: rgba(0, 0, 0, 0.6);
+}

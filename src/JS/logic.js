@@ -17,8 +17,8 @@ function collapseSidebar() {
 // End of Function: collapseSidebar()
 
 // show the number of questions that the teacher want to make
-function showQusetionNumber() {
-    var v = document.getElementById("qtType");
+function showQuestionNumber() {
+    let v = document.getElementById("qtType");
     console.log(v.selectedIndex);
     if (v.selectedIndex === 0) {
         document.getElementById("qtNumber").style.display = "block";
