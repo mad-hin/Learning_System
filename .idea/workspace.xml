@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="937b0dd0-c924-4166-ad82-71ebaa7c8c1d" name="Default Changelist" comment="whatever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTML/newstuacc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTML/newstuacc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JS/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JS/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JS/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JS/system.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/sfxcmc.github.io" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/FuBuKi_DiscordBot" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -119,7 +122,11 @@
       <workItem from="1597805883717" duration="5283000" />
       <workItem from="1597827121122" duration="935000" />
       <workItem from="1597908210045" duration="780000" />
-      <workItem from="1597917882042" duration="11881000" />
+      <workItem from="1597917882042" duration="12486000" />
+      <workItem from="1597937042976" duration="1007000" />
+      <workItem from="1597973330642" duration="1957000" />
+      <workItem from="1597992537945" duration="755000" />
+      <workItem from="1597998237094" duration="4706000" />
     </task>
     <task id="LOCAL-00001" summary="whatever">
       <created>1597410207828</created>
@@ -184,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597930785770</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="whatever">
+      <created>1597932831196</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597932831196</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,26 +238,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597717075290" />
-    <state x="813" y="294" key="FileChooserDialogImpl" timestamp="1597630912321">
+    <state x="813" y="294" key="FileChooserDialogImpl" timestamp="1598000723121">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="813" y="294" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597630912321" />
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1597932157535">
+    <state x="813" y="294" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1598000723121" />
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom" timestamp="1598003745892">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597932157535" />
-    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1597932157535">
+    <state width="1899" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598003745892" />
+    <state width="1899" height="248" key="GridCell.Tab.0.center" timestamp="1598003745892">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597932157535" />
-    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1597932157535">
+    <state width="1899" height="248" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598003745892" />
+    <state width="1899" height="248" key="GridCell.Tab.0.left" timestamp="1598003745892">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597932157535" />
-    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1597932157535">
+    <state width="1899" height="248" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598003745892" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right" timestamp="1598003745892">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597932157535" />
+    <state width="1899" height="248" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598003745892" />
     <state width="1899" height="343" key="GridCell.Tab.1.bottom" timestamp="1597501453130">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -296,10 +310,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1597908403859" />
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597841264775">
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597932833476">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597841264775" />
+    <state x="551" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597932833476" />
     <state x="610" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597560973827">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -312,5 +326,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="726" y="398" width="624" height="285" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597667420834" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1598003732872">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598003732872" />
   </component>
 </project>

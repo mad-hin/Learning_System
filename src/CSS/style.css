@@ -205,7 +205,7 @@ body.newstuacc-body {
 }
 
 .signUp-box input[type="text"],
-.signUp-box input[type="password"] {
+.signUp-box input[type="password"]{
     background-color: transparent;
     display: block;
     margin: 20px auto;
@@ -218,6 +218,26 @@ body.newstuacc-body {
     border-radius: 35px;
     transition: 0.25s;
     font-size: medium;
+}
+
+.signUp-box select{
+    background-color: transparent;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 10px;
+    width: 430px;
+    outline: none;
+    color: white;
+    border-radius: 35px;
+    transition: 0.25s;
+    font-size: medium;
+    text-align-last:center;
+}
+
+.signUp-box option{
+    background: gray;
 }
 
 .signUp-box input[type="text"]:focus,

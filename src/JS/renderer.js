@@ -49,6 +49,8 @@ if (fileName[0] === "index.html") {
     signIn.addEventListener('click', function () {
         let email = document.getElementById("email").value;
         let pwd = document.getElementById("pwd").value;
+        let id = email.substring(0, email.lastIndexOf("@"));
+        sessionStorage.setItem("userID", id);
         signInFunction(email, pwd);
     });
     // End of Sign in
@@ -83,8 +85,8 @@ if (fileName[0] === "index.html") {
 } else if (fileName[0] === "system.html") {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            let uid = user.uid;
-            getUserName(uid);
+            getUserName(sessionStorage.getItem("userID"));
+            checkRole(sessionStorage.getItem("userID"))
         }
     });
 }
@@ -110,7 +112,7 @@ function signInFunction(email, pwd) {
     firebase.auth().signInWithEmailAndPassword(email, pwd).then(function () {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                db.ref('users/' + user.uid + '/name').once('value').then(
+                db.ref('users/' + sessionStorage.getItem("userID") + '/name').once('value').then(
                     name => {
                         passwordUpdate(name.val(), pwd)
                     }
@@ -142,7 +144,6 @@ function getUserName(uid) {
             document.getElementById('welcomeMessage').style.visibility = "hidden";
             document.getElementById('welcomeMessage').innerHTML = "Welcome " + name.val();
             document.getElementById('welcomeMessage').style.visibility = "visible";
-            checkRole(name.val())
         }
     )
 }

@@ -66,6 +66,7 @@ window.onload = function () {
         let reset = document.getElementById("redoBnt");
         let create = document.getElementById("signUpBnt");
 
+        loadClass();
         reset.addEventListener('click', function () {
             // Confirm to erease all the input
             if (confirm("This action will remove all inputed items")) {
@@ -95,17 +96,30 @@ window.onload = function () {
     }
 }
 
+function loadClass() {
+    let letter = ["A", "B", "C", "D", "E"];
+    for (let i = 1; i <= 6; i++) {
+        for (let j = 0; j < 5; j++) {
+            let className = i.toString() + letter[j]
+            const opt = document.createElement("OPTION");
+            opt.appendChild(document.createTextNode(className));
+            document.getElementById("stuClass").appendChild(opt);
+        }
+    }
+}
+
 function createAcc() {
     let stuName = document.getElementById("stuName").value;
     let stuId = document.getElementById("stuId").value;
     let stuEmail = document.getElementById("stuEmail").value;
     let stuPwd = document.getElementById("stuPwd").value;
     let stuComPwd = document.getElementById("stuComPwd").value;
+    let stuClass = document.getElementById("stuClass").options[document.getElementById("stuClass").selectedIndex].text
     if (allFill(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
         console.log("All items filled");
         if (allValid(stuName, stuId, stuEmail, stuPwd, stuComPwd)) {
             console.log("All items are valid");
-            register(stuName, stuId, stuEmail, stuPwd);
+            register(stuName, stuId, stuEmail, stuPwd, stuClass);
             reform();
         }
     }
@@ -141,7 +155,7 @@ function allFill(name, id, email, pwd, compwd) {
         unFillPart += ++cnt + ". Student ID\n";
     }
 
-    // Check if student Emsil have been filled or not
+    // Check if student Email have been filled or not
     if (email === "" && cnt === 0) {
         unFillPart += "1. Student Email\n";
         cnt++;
@@ -203,8 +217,6 @@ function pwdValid(pwd, compwd) {
 
     // Check if the password is greater than the min length
     return pwdLenCheck(pwd);
-
-
 }
 
 // End of function: pwdValid
@@ -250,7 +262,7 @@ function idValid(id) {
     }
 }
 
-function register(name, id, email, pwd) {
+function register(name, id, email, pwd, stuClass) {
     let stuID = email.substring(0, email.lastIndexOf("@"));
     registerApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
         registerApp.auth().onAuthStateChanged(function (user) {
@@ -262,7 +274,8 @@ function register(name, id, email, pwd) {
                     password: pwd,
                     role: "student",
                     uid: user.uid,
-                    id: id
+                    id: id,
+                    className : stuClass
                 }).then(r =>
                     alert("Account of ID:" + id + " Name: " + name + " created successfully\n")
                 );
