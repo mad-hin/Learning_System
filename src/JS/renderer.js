@@ -196,7 +196,7 @@ export function addQuestionToDatabase(inputedQuestions, correctAns, type, subjec
     db.ref("/" + type + "/" + level + "/" + subject + "/" + questionID).set({
         question: inputedQuestions,
         answer: correctAns
-    }).then(r => {
+    }).then(() => {
         document.location.href = 'newqt.html';
     });
 }
