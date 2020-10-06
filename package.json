@@ -19,7 +19,7 @@
     "websocket-extensions": ">=0.1.4"
   },
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.3.1"
   },
   "repository": {
     "type": "git",
