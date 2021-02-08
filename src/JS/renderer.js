@@ -45,7 +45,7 @@ if (fileName[0] === "index.html") {
         }
     });
 
-    // Sign in 
+    // Sign in
     signIn.addEventListener('click', function () {
         let email = document.getElementById("email").value;
         let pwd = document.getElementById("pwd").value;
@@ -71,7 +71,7 @@ if (fileName[0] === "index.html") {
                     // Make The Horizontal Rule Be Visible
                     document.getElementById("login-hr").style.visibility = "visible";
 
-                    // Load Error Message 
+                    // Load Error Message
                     document.getElementById("login-error").innerHTML = errorMessage;
 
                     // Make The Error Message Be Visible
@@ -108,6 +108,11 @@ if (fileName[0] !== "index.html") {
     // End of Action after clicking the "Logout" anchor
 }
 
+/**
+ *
+ * @param email
+ * @param pwd
+ */
 function signInFunction(email, pwd) {
     firebase.auth().signInWithEmailAndPassword(email, pwd).then(function () {
         firebase.auth().onAuthStateChanged(function (user) {
@@ -138,6 +143,10 @@ function signInFunction(email, pwd) {
     })
 }
 
+/**
+ *
+ * @param uid
+ */
 function getUserName(uid) {
     db.ref('users/' + uid + '/name').once('value').then(
         name => {
@@ -148,6 +157,10 @@ function getUserName(uid) {
     )
 }
 
+/**
+ *
+ * @param username
+ */
 function checkRole(username) {
     console.log(username)
     db.ref('/users/' + username + '/role').once('value').then(
@@ -162,6 +175,11 @@ function checkRole(username) {
     )
 }
 
+/**
+ *
+ * @param username
+ * @param currPassword
+ */
 function passwordUpdate(username, currPassword) {
     var updates = {};
     db.ref('/users/' + username + '/password').once('value').then(
@@ -192,6 +210,15 @@ export function loadSubject() {
 
 // add the questions to the firebase database
 // export the function is because I call this function in "system.js" file
+/**
+ *
+ * @param inputedQuestions
+ * @param correctAns
+ * @param type
+ * @param subject
+ * @param level
+ * @param questionID
+ */
 export function addQuestionToDatabase(inputedQuestions, correctAns, type, subject, level, questionID) {
     db.ref("/" + type + "/" + level + "/" + subject + "/" + questionID).set({
         question: inputedQuestions,
@@ -209,6 +236,12 @@ if the question is for task, the ID will start with "T_" (i.e. T_ENGLISH_1)
 else the ID will start with "P_" (i.e. P_MATH_1)
 export the function is because I call this function in "system.js" file
 */
+/**
+ *
+ * @param type
+ * @param subject
+ * @param level
+ */
 export function genQuestionID(type, subject, level) {
     let idType;
     if (type === "task") {

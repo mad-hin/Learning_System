@@ -135,6 +135,15 @@ function reform() {
 // End of function: reform
 
 // Check if all the items have been filled
+/**
+ *
+ * @param name
+ * @param id
+ * @param email
+ * @param pwd
+ * @param compwd
+ * @returns {boolean}
+ */
 function allFill(name, id, email, pwd, compwd) {
     var unFillPart = "";
     var cnt = 0;
@@ -191,6 +200,10 @@ function allFill(name, id, email, pwd, compwd) {
 // End of function: allFill
 
 // Function to display all the unfilled part(s) (if there have any)
+/**
+ *
+ * @param unFillPart
+ */
 function unFillMessage(unFillPart) {
     console.log(unFillPart);
     alert("Error, Account cannot be created.\nThe following item(s) have not been filled:\n" + unFillPart);
@@ -199,6 +212,15 @@ function unFillMessage(unFillPart) {
 // End of function: unFillMessage
 
 // Function to check if all the information are valid information
+/**
+ *
+ * @param name
+ * @param id
+ * @param email
+ * @param pwd
+ * @param compwd
+ * @returns {boolean}
+ */
 function allValid(name, id, email, pwd, compwd) {
     if (pwdValid(pwd, compwd) && emailValid(email) && nameValid(name) && idValid(id)) {
         return true;
@@ -208,6 +230,12 @@ function allValid(name, id, email, pwd, compwd) {
 // End of function: allValid
 
 // Function to check the password is same as the confirm password and is it greater than the min length
+/**
+ *
+ * @param pwd
+ * @param compwd
+ * @returns {boolean}
+ */
 function pwdValid(pwd, compwd) {
     // Check if the password is same as the confirm password
     if (pwd !== compwd) {
@@ -222,6 +250,11 @@ function pwdValid(pwd, compwd) {
 // End of function: pwdValid
 
 // Check if the password is greater than the min length
+/**
+ *
+ * @param pwd
+ * @returns {boolean}
+ */
 function pwdLenCheck(pwd) {
     if (pwd.length < 6) {
         alert("Password is too short (at least 6 characters).\n");
@@ -234,6 +267,11 @@ function pwdLenCheck(pwd) {
 // End of function: pwdLenCheck
 
 
+/**
+ *
+ * @param mail
+ * @returns {boolean}
+ */
 function emailValid(mail) {
     if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
         return true;
@@ -243,6 +281,11 @@ function emailValid(mail) {
     }
 }
 
+/**
+ *
+ * @param name
+ * @returns {boolean}
+ */
 function nameValid(name) {
     if (/^[a-zA-Z_\u4e00-\u9fa5 ]+$/.test(name)) {
         console.log("Name ok\n");//For Debug
@@ -254,6 +297,11 @@ function nameValid(name) {
     }
 }
 
+/**
+ *
+ * @param id
+ * @returns {boolean}
+ */
 function idValid(id) {
     if (/^[a-zA-Z][a-zA-Z0-9]+$/.test(id)) {
         return true;
@@ -262,9 +310,23 @@ function idValid(id) {
     }
 }
 
+/**
+ *
+ * @param name
+ * @param id
+ * @param email
+ * @param pwd
+ * @param stuClass
+ */
 function register(name, id, email, pwd, stuClass) {
     let stuID = email.substring(0, email.lastIndexOf("@"));
-    registerApp.auth().createUserWithEmailAndPassword(email, pwd).then(function () {
+    /**
+     *
+     */
+    registerApp.auth().createUserWithEmailAndPassword(email, pwd).then/**
+     *
+     */
+(function () {
         registerApp.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log("Account created uid:" + user.uid);
@@ -308,6 +370,13 @@ function chooseType() {
     createQuestion(num, type, subject, level);
 }
 
+/**
+ *
+ * @param target
+ * @param type
+ * @param subject
+ * @param level
+ */
 function createQuestion(target, type, subject, level) {
     let nextAct = document.getElementById("nextqtBnt");
     let backAct = document.getElementById("goBackBnt");
