@@ -11,15 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "connect": "^3.7.0",
-    "custom-electron-titlebar": "^3.2.2-hotfix62",
-    "firebase": "^8.2.1",
+    "custom-electron-titlebar": "^3.2.6",
+    "firebase": "^8.2.9",
     "node-fetch": ">=2.6.1",
     "node-static": "^0.7.11",
     "serve-static": "^1.14.1",
     "websocket-extensions": ">=0.1.4"
   },
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.4.3"
   },
   "repository": {
     "type": "git",
