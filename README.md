@@ -12,9 +12,13 @@ This "Learning_System" planned to be my School-based Assessment (SBA) for HKDSE 
 
 ## Project setup
 
+1. Install all necessary packages
+
 ``` 
 npm install
 ```
+
+2. Create a project in Firebase and create user in `Authentication`
 
 > **Remember** add your firebase config in `src/JS/renderer.js` and `src/JS/system.js`
 
