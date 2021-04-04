@@ -16,6 +16,8 @@ This "Learning_System" planned to be my School-based Assessment (SBA) for HKDSE 
 npm install
 ```
 
+> **Remember** add your firebase config in `src/JS/renderer.js` and `src/JS/system.js`
+
 ### Compiles and hot-reloads for development
 
 ``` 
