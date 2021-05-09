@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This "Learning_System" planned to be my School-based Assessment (SBA) for HKDSE ICT. However, due to COVID-19, the HKEAA canceled SBA in the year 2021 DSE. Therefore this system had **not** finished developing, and I will **not** develop it anymore.
+This "Learning_System" planned to be my School-based Assessment (SBA) for HKDSE ICT. However, due to COVID-19, the HKEAA canceled SBA in the year 2021 DSE. Therefore this system had **NOT** finished developing, and I will **NOT** develop it anymore.
 
 ## Prerequisites
 
@@ -32,3 +32,6 @@ npm start
 
 1.  After alert box / confirm box pop out will freeze the app (Windows only)
 2.  The window frame can be resized after the alert box / confirm box pop out (macOS only)
+
+## Lisence
+This project is under MIT Lisence [tl;dr](https://tldrlegal.com/license/mit-license)
